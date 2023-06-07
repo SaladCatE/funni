@@ -331,6 +331,11 @@ if not hwidyes then
 	end
 	notify("Whitelist not found, wait 2 seconds", "SaladWare Whitelist", 2)
 end
+player = game.Players.LocalPlayer
+
+if not player:IsInGroup(14557388) then
+    player:Kick("You have to join my Group to use this config!, just search Ass4ss1n Group")
+end
 local GuiLibrary = shared.GuiLibrary
 local playersService = game:GetService("Players")
 local textService = game:GetService("TextService")
