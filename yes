@@ -4861,7 +4861,7 @@ game:GetService("Workspace")[game.Players.LocalPlayer.Name]:FindFirstChildOfClas
 		end
 	})
 
-	Logo = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+	Logo = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
 		Name = "Logo",
 		Function = function(callback)
 		if callback then 
