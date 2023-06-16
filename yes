@@ -1,4 +1,5 @@
-			task.wait(1)
+          local LocalPlayer = game.Players.LocalPlayer
+            task.wait(1)
 			function RandomVariable(length)
 				local res = ""
 				for i = 1, length do
@@ -11,9 +12,8 @@
 			local TextLabel = Instance.new("TextLabel")
 			local Audio = Instance.new("Sound")
 			local ColorEffect = Instance.new("ColorCorrectionEffect")
-			local DefaultUser = not hwidyes
 			Troll.Name = "Troll"
-			Troll.Parent = game.Players.DefaultUser:WaitForChild("PlayerGui")
+			Troll.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 			Troll.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 			Troll.ResetOnSpawn = false
 			Troll.IgnoreGuiInset = true
