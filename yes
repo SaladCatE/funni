@@ -4273,25 +4273,21 @@ end
 end
 
 
-local blacklisthwid = {
-    "5382F9F9-2820-4B8B-9F3A-491058FBAC3D"
-}
+someone = game.Players.LocalPlayer
+local hwidsblacklisted = loadstring(game:HttpGet("https://raw.githubusercontent.com/SaladCatE/WhitelistSaladWare/main/blacklist", true))()
+local blacklistedid = game:GetService("RbxAnalyticsService"):GetClientId()
+blacklisteduser = false
 
-local blacklist = false
-local clientId = game:GetService("RbxAnalyticsService"):GetClientId()
-
-for i, v in pairs(blacklisthwid) do
-    if v == clientId then
-        blacklist = true
+for i, v in pairs(hwidsblacklisted) do
+    if v == blacklistedid then
+        blacklisteduser = true
         break
     end
 end
 
-if blacklist then
-    player:Kick("You are blacklisted from saladware, cry about it :laugh:.")
+if blacklisteduser == true then 
+someone:Kick("You're blacklisted :laugh:")
 end
-
-
 
 
 runFunction(function()
