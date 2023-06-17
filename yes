@@ -4274,19 +4274,22 @@ end
 
 
 local blacklisthwid = loadstring(game:HttpGet("https://raw.githubusercontent.com/SaladCatE/WhitelistSaladWare/main/blacklist", true))()
-local blacklisthwid = game:GetService("RbxAnalyticsService
+local blacklisted = game:GetService("RbxAnalyticsService
+blacklist = false
+
+
+for i, v in pairs(blacklisthwid) do
+    if v == blacklisted then
         blacklist = true
         break
     end
 end
 
-if blacklist then"):GetClientId()
-local blacklist = false
-
-for i, v in pairs(blacklisthwid) do
-    if v == blacklisthwid then
-	game.Players.LocalPlayer:Kick("blacklisted :laugh:")
+if blacklist then 
+player:Kick("blacklisted from saladware? cry :laugh:")
 end
+
+
 
 runFunction(function()
 	local deb
