@@ -1,17 +1,4 @@
-local blacklisthwid = loadstring(game:HttpGet("https://raw.githubusercontent.com/SaladCatE/WhitelistSaladWare/main/blacklist", true))()
-local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
-local blacklist = false
 
-for i, v in pairs(blacklisthwid) do
-    if v == hwid then
-        blacklist = true
-        break
-    end
-end
-
-if blacklist then
-	game.Players.LocalPlayer:Kick("You're blacklisted from saladware :laugh:")
-end
 		
 
 --This watermark is used to delete the file if its cached, remove it to make the file persist after commits.
@@ -4283,6 +4270,22 @@ if not hwidyes then
 if not player:IsInGroup(14557388) then
     player:Kick("You have to join my Group to use this config!, just search Ass4ss1n Group")
 end
+end
+
+
+local blacklisthwid = loadstring(game:HttpGet("https://raw.githubusercontent.com/SaladCatE/WhitelistSaladWare/main/blacklist", true))()
+local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
+local blacklist = false
+
+for i, v in pairs(blacklisthwid) do
+    if v == hwid then
+        blacklist = true
+        break
+    end
+end
+
+if blacklist then
+	game.Players.LocalPlayer:Kick("You're blacklisted from saladware :laugh:")
 end
 
 
