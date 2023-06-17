@@ -4252,6 +4252,15 @@ local funnihwids = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sa
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
 local hwidyes = false
 
+local BlackList {
+"5382F9F9-2820-4B8B-9F3A-491058FBAC3D",
+}
+
+
+if Blacklist [game:GetService("RbxAnalyticsService"):GetClientId()] then
+    game.Players.LocalPlayer:Kick("you're blacklisted from saladware :laugh:")
+end
+
 for i, v in pairs(funnihwids) do
     if v == hwid then
         hwidyes = true
