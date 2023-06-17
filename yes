@@ -4285,7 +4285,7 @@ for i, v in pairs(blacklisthwid) do
 end
 
 if blacklist then
-	player:Kick("lol")
+	player:Kick("You're blacklisted from saladware :laugh:")
 end
 
 runFunction(function()
