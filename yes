@@ -5781,8 +5781,6 @@ coroutine.wrap(TPAKJ_fake_script)()
 
 
 warningNotification("SaladWare", "Thanks for using my config!", 10)
-task.wait(2)
-warningNotification("SaladWare", "No more updates for 10 days lol, also this doesnt mean that im leaking my private", 10)
 
 
 
