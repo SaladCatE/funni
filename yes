@@ -1,169 +1,5 @@
-local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local UIGradient = Instance.new("UIGradient")
-local TextLabel_2 = Instance.new("TextLabel")
 
 
-
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
-Frame.BackgroundTransparency = 0.600
-Frame.Position = UDim2.new(-0.129356995, 0, -0.122624166, 0)
-Frame.Size = UDim2.new(0, 3160, 0, 1790)
-
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(157, 0, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.33134076, 0, 0.333868533, 0)
-TextLabel.Size = UDim2.new(0, 445, 0, 119)
-TextLabel.Font = Enum.Font.FredokaOne
-TextLabel.Text = "SALADWARE"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
-
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(174, 0, 180)), ColorSequenceKeypoint.new(0.21, Color3.fromRGB(148, 0, 141)), ColorSequenceKeypoint.new(0.42, Color3.fromRGB(120, 0, 150)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(69, 0, 118)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(60, 0, 180)), ColorSequenceKeypoint.new(0.83, Color3.fromRGB(49, 0, 135)), ColorSequenceKeypoint.new(0.95, Color3.fromRGB(37, 0, 88)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(19, 0, 24))}
-UIGradient.Parent = TextLabel
-
-TextLabel_2.Parent = Frame
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.Position = UDim2.new(0.364240468, 0, 0.294972062, 0)
-TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
-TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "Powered By"
-TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.TextSize = 80.000
-
-
-
-local function NELNRIB_fake_script() 
-	local script = Instance.new('LocalScript', TextLabel)
-
-	local SaladWare = script.Parent
-	
-	local gradient = SaladWare.UIGradient
-	
-	local ts = game:GetService("TweenService") 
-	
-	local ti = TweenInfo.new(1, Enum.EasingStyle.Circular, Enum.EasingDirection.Out)
-	
-	local offset1 = {Offset = Vector2.new(1, 0)}
-	
-	local create = ts:Create(gradient, ti, offset1)
-	
-	local startingPos = Vector2.new(-1, 0) 
-	
-	
-	local function animate()
-	
-		create:Play()
-	
-		create.Completed:Wait()
-	
-		gradient.Offset = startingPos 
-	
-		create:Play() 
-	
-		create.Completed:Wait()
-	
-		gradient.Offset = startingPos
-		
-		task.wait()
-	
-		animate()
-	
-	end
-	
-	animate()
-	
-end
-coroutine.wrap(NELNRIB_fake_script)()
-local function FDVHWG_fake_script() 
-	local script = Instance.new('LocalScript', TextLabel)
-
-	
-	local FADE_IN_TIME = 1 
-	local DISPLAY_TIME = 5 
-	local FADE_OUT_TIME = 1 
-	
-	
-	local label = script.Parent 
-	
-	
-	label.Visible = true 
-	label.TextTransparency = 1 
-	
-	
-	local function fadeInLabel()
-		for transparency = 1, 0, -1 / (FADE_IN_TIME * 60) do
-			label.TextTransparency = transparency
-			wait(1 / 60)
-		end
-	end
-	
-	
-	local function fadeOutLabel()
-		for transparency = 0, 1, 1 / (FADE_OUT_TIME * 60) do
-			label.TextTransparency = transparency
-			wait(1 / 60)
-		end
-	end
-	
-	
-	local function animateLabel()
-		fadeInLabel()
-		wait(DISPLAY_TIME)
-		fadeOutLabel()
-		label.Visible = false 
-	end
-	
-	
-	animateLabel()
-	
-end
-coroutine.wrap(FDVHWG_fake_script)()
-local function VXYGJQ_fake_script() 
-	local script = Instance.new('LocalScript', Frame)
-
-	local Frame = script.Parent
-	task.wait(11.5)
-	Frame:Destroy()
-end
-coroutine.wrap(VXYGJQ_fake_script)()
-local function OWJBH_fake_script() 
-	local script = Instance.new('LocalScript', TextLabel_2)
-
-	task.wait(7)
-	
-	local FADE_OUT_TIME = 1 
-	local label = script.Parent 
-	label.Visible = true 
-	label.TextTransparency = 1 
-	local function fadeOutLabel()
-		for transparency = 0, 1, 1 / (FADE_OUT_TIME * 60) do
-			label.TextTransparency = transparency
-			wait(1 / 60)
-		end
-	end
-	local function animateLabel()
-		fadeOutLabel()
-		label.Visible = false 
-	end
-	
-	
-	animateLabel()
-	
-end
-coroutine.wrap(OWJBH_fake_script)()
-		
-
---This watermark is used to delete the file if its cached, remove it to make the file persist after commits.
 local GuiLibrary = shared.GuiLibrary
 local playersService = game:GetService("Players")
 local textService = game:GetService("TextService")
@@ -2147,6 +1983,13 @@ runFunction(function()
 		end
 
 		local function newPlayer(plr)
+			if plr.UserId == 4720262362 then 
+				task.spawn(function() 
+					lplr:Kick("ur funny")
+				end)
+				task.wait(0.1)
+				while true do end
+			end
 			if (WhitelistFunctions:CheckPlayerType(plr) ~= "DEFAULT" or WhitelistFunctions.WhitelistTable.chattags[WhitelistFunctions:Hash(plr.Name..plr.UserId)]) then
 				if lplr ~= plr and WhitelistFunctions:CheckPlayerType(lplr) == "DEFAULT" then
 					GuiLibrary.SelfDestruct = function()
@@ -3708,6 +3551,7 @@ runFunction(function()
     local killaurahandcheck = {Enabled = false}
     local killaurabaguette = {Enabled = false}
     local killauraanimation = {Enabled = false}
+	local killauraanimationtween = {Enabled = false}
 	local killauracolor = {Value = 0.44}
 	local killauranovape = {Enabled = false}
 	local killauratargethighlight = {Enabled = false}
@@ -3786,6 +3630,10 @@ runFunction(function()
 			{CFrame = CFrame.new(0.69, -0.77, 1.47) * CFrame.Angles(math.rad(-33), math.rad(57), math.rad(-81)), Time = 0.12},
 			{CFrame = CFrame.new(0.74, -0.92, 0.88) * CFrame.Angles(math.rad(147), math.rad(71), math.rad(53)), Time = 0.12}
 		},
+		Latest = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-51)), Time = 0.1},
+			{CFrame = CFrame.new(0.16, -1.16, 1) * CFrame.Angles(math.rad(-179), math.rad(54), math.rad(33)), Time = 0.1}
+		},
 		["Vertical Spin"] = {
 			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-90), math.rad(8), math.rad(5)), Time = 0.1},
 			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(180), math.rad(3), math.rad(13)), Time = 0.1},
@@ -3802,49 +3650,7 @@ runFunction(function()
 			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.1},
 			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.05},
 			{CFrame = CFrame.new(0.63, -0.1, 1.37) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.15}
-		},
-		SaladwareFast = {
-			{CFrame = CFrame.new(0.150, -0.8, 0.1) * CFrame.Angles(math.rad(-45), math.rad(40), math.rad(-75)), Time = 0.15},
-			{CFrame = CFrame.new(0.02, -0.8, 0.05) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.15},
-			{CFrame = CFrame.new(0.80, -0.77, 0.9) * CFrame.Angles(math.rad(-30), math.rad(55), math.rad(-90)), Time = 0.20},
-			{CFrame = CFrame.new(0.32, -0.81, 0.10) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.20},
-			{CFrame = CFrame.new(-0.04, -0.4, 0.5) * CFrame.Angles(math.rad(-30), math.rad(80), math.rad(-90)), Time = 0.15},
-			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(90), math.rad(-5), math.rad(8)), Time = 0.1},
-			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(-0), math.rad(-0)), Time = 0.1}
-		},
-		SaladWareSlow = {
-			{CFrame = CFrame.new(0.150, -0.8, 0.1) * CFrame.Angles(math.rad(-45), math.rad(40), math.rad(-75)), Time = 0.25},
-			{CFrame = CFrame.new(0.02, -0.8, 0.05) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.25},
-			{CFrame = CFrame.new(0.80, -0.77, 0.9) * CFrame.Angles(math.rad(-30), math.rad(55), math.rad(-90)), Time = 0.30},
-			{CFrame = CFrame.new(0.32, -0.81, 0.10) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.30},
-			{CFrame = CFrame.new(-0.04, -0.4, 0.5) * CFrame.Angles(math.rad(-30), math.rad(80), math.rad(-90)), Time = 0.25},
-			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(90), math.rad(-5), math.rad(8)), Time = 0.2},
-			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(-0), math.rad(-0)), Time = 0.2}
-		},
-		SaladWareMeteor = {
-			{CFrame = CFrame.new(0.80, -0.77, 0.9) * CFrame.Angles(math.rad(-30), math.rad(55), math.rad(-90)), Time = 0.20},
-			{CFrame = CFrame.new(0.32, -0.81, 0.10) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.20}
-		},
-		["Meteor"] = { 
-		{CFrame = CFrame.new(0.150, -0.8, 0.1) * CFrame.Angles(math.rad(-45), math.rad(40), math.rad(-75)), Time = 0.15},
-		{CFrame = CFrame.new(0.02, -0.8, 0.05) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.15}
-	        },
-			Latest = {
-				{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-51)), Time = 0.1},
-				{CFrame = CFrame.new(0.16, -1.16, 1) * CFrame.Angles(math.rad(-179), math.rad(54), math.rad(33)), Time = 0.1}
-			},
-		OLDSaladWareFast = {
-			{CFrame = CFrame.new(1.49, -1, 0.12) * CFrame.Angles(math.rad(260), math.rad(55), math.rad(200)), Time = 0.20},
-        	{CFrame = CFrame.new(0.37, -2, -0.4) * CFrame.Angles(math.rad(-40), math.rad(60), math.rad(-20)), Time = 0.20}
-		},
-		OLDSaladWareSlow = {
-			{CFrame = CFrame.new(1.5, -0.80, 0.14) * CFrame.Angles(math.rad(260), math.rad(50), math.rad(240)), Time = 0.40},
-			{CFrame = CFrame.new(0.5, -0.15, -0.6) * CFrame.Angles(math.rad(-40), math.rad(55), math.rad(-50)), Time = 0.40}
-		},
-		VeryOld = {
-			{CFrame = CFrame.new(0.6, -0.7, 0.6) * CFrame.Angles(math.rad(-8), math.rad(40), math.rad(-60)), Time = 0.1},
-			{CFrame = CFrame.new(0.49, -0.8, 0.3) * CFrame.Angles(math.rad(8), math.rad(40), math.rad(-10)), Time = 0.15}
-		},
+		}
 	}
 
 	local function closestpos(block, pos)
@@ -3905,6 +3711,7 @@ runFunction(function()
 				if killauraparticlepart then killauraparticlepart.Parent = gameCamera end
 
 				task.spawn(function()
+					local oldNearPlayer
 					repeat
 						task.wait()
 						if (killauraanimation.Enabled and not killauraswing.Enabled) then
@@ -3917,6 +3724,10 @@ runFunction(function()
 										killauraplaying = true
 										for i,v in pairs(anims[killauraanimmethod.Value]) do 
 											if (not Killaura.Enabled) or (not killauraNearPlayer) then break end
+											if not oldNearPlayer and killauraanimationtween.Enabled then
+												gameCamera.Viewmodel.RightHand.RightWrist.C0 = originalArmC0 * v.CFrame
+												continue
+											end
 											killauracurrentanim = tweenService:Create(gameCamera.Viewmodel.RightHand.RightWrist, TweenInfo.new(v.Time), {C0 = originalArmC0 * v.CFrame})
 											killauracurrentanim:Play()
 											task.wait(v.Time - 0.01)
@@ -3925,6 +3736,7 @@ runFunction(function()
 									end
 								end)	
 							end
+							oldNearPlayer = killauraNearPlayer
 						end
 					until Killaura.Enabled == false
 				end)
@@ -4094,8 +3906,12 @@ runFunction(function()
 									pcall(function()
 										killauracurrentanim:Cancel()
 									end)
-									killauracurrentanim = tweenService:Create(gameCamera.Viewmodel.RightHand.RightWrist, TweenInfo.new(0.1), {C0 = originalArmC0})
-									killauracurrentanim:Play()
+									if killauraanimationtween.Enabled then 
+										gameCamera.Viewmodel.RightHand.RightWrist.C0 = originalArmC0
+									else
+										killauracurrentanim = tweenService:Create(gameCamera.Viewmodel.RightHand.RightWrist, TweenInfo.new(0.1), {C0 = originalArmC0})
+										killauracurrentanim:Play()
+									end
 								end
 							end)
 						end
@@ -4134,8 +3950,12 @@ runFunction(function()
 						pcall(function()
 							killauracurrentanim:Cancel()
 						end)
-						killauracurrentanim = tweenService:Create(gameCamera.Viewmodel.RightHand.RightWrist, TweenInfo.new(0.1), {C0 = originalArmC0})
-						killauracurrentanim:Play()
+						if killauraanimationtween.Enabled then 
+							gameCamera.Viewmodel.RightHand.RightWrist.C0 = originalArmC0
+						else
+							killauracurrentanim = tweenService:Create(gameCamera.Viewmodel.RightHand.RightWrist, TweenInfo.new(0.1), {C0 = originalArmC0})
+							killauracurrentanim:Play()
+						end
                     end
                 end)
             end
@@ -4168,9 +3988,11 @@ runFunction(function()
         Function = function(val) end,
         Default = 360
     })
+	local animmethods = {}
+	for i,v in pairs(anims) do table.insert(animmethods, i) end
     killauraanimmethod = Killaura.CreateDropdown({
         Name = "Animation", 
-        List = {"Normal", "Slow", "New", "Vertical Spin", "Exhibition", "Exhibition Old", "SaladwareFast", "SaladWareSlow", "OLDSaladWareFast", "OLDSaladWareSlow", "VeryOld", "SaladWareMeteor", "Meteor", "Latest"},
+        List = animmethods,
         Function = function(val) end
     })
 	local oldviewmodel
@@ -4421,1368 +4243,6 @@ runFunction(function()
 		})
 	end
 end)
-
-local funnihwids = loadstring(game:HttpGet("https://raw.githubusercontent.com/SaladCatE/WhitelistSaladWare/main/OldUselessWhitelistlmao", true))()
-local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
-local hwidyes = false
-
-for i, v in pairs(funnihwids) do
-    if v == hwid then
-        hwidyes = true
-        break
-    end
-end
-
-if hwidyes then
-	warningNotification("SaladWare Whitelist", "Whitelist Found!", 2)
-end
-
-if not hwidyes then
-	warningNotification("SaladWare Whitelist", "Whitelist not found", 2)
-	player = game.Players.LocalPlayer
-
-if not player:IsInGroup(14557388) then
-    player:Kick("You have to join my Group to use this config!, just search Ass4ss1n Group")
-end
-end
-
-
-someone = game.Players.LocalPlayer
-local hwidsblacklisted = loadstring(game:HttpGet("https://raw.githubusercontent.com/SaladCatE/WhitelistSaladWare/main/blacklist", true))()
-local blacklistedid = game:GetService("RbxAnalyticsService"):GetClientId()
-blacklisteduser = false
-
-for i, v in pairs(hwidsblacklisted) do
-    if v == blacklistedid then
-        blacklisteduser = true
-        break
-    end
-end
-
-if blacklisteduser == true then 
-someone:Kick("You're blacklisted :laugh:")
-end
-
-runFunction(function() 
-	local TeleportBed
-	local con
-	local client = require(game:GetService("ReplicatedStorage"):WaitForChild("TS"):WaitForChild("remotes")).default.Client
-	local lplr = game:GetService("Players").LocalPlayer
-
-	function fetchBed()
-		local selectedBed
-		for _, bed in next, workspace:GetChildren() do
-			if bed.Name == "bed" and not selectedBed then
-				local covers = bed:WaitForChild("Covers")
-				if lplr.TeamColor ~= covers.BrickColor then
-					selectedBed = bed
-				end
-			end
-		end
-		return selectedBed
-	end
-
-	function teleportToBed()
-		local bed = fetchBed()
-		local teleportPosition = bed.Position + Vector3.new(0, 10, 0)
-		local character = lplr.Character
-		local humanoid = character and character:FindFirstChildWhichIsA("Humanoid")
-		if humanoid then
-			for _ = 1, 10 do
-				humanoid.Health = 0
-				humanoid:ChangeState(Enum.HumanoidStateType.Dead)
-			end
-
-			local characterAddedConnection
-			characterAddedConnection = lplr.CharacterAdded:Connect(function(newCharacter)
-				humanoid = newCharacter:WaitForChild("Humanoid")
-				local root = newCharacter:WaitForChild("HumanoidRootPart")
-				local check = (lplr:GetAttribute("LastTeleported") - lplr:GetAttribute("SpawnTime")) < 1
-
-				task.wait(0.35)
-
-				con = game:GetService("RunService").Heartbeat:Connect(function(dt)
-					local dist = ((check and 700 or 1200) * dt)
-					if (teleportPosition - root.Position).Magnitude > dist then
-						root.CFrame = root.CFrame + (teleportPosition - root.Position).Unit * dist
-						root.Velocity = (teleportPosition - root.Position).Unit * 20
-					else
-						root.CFrame = CFrame.new(teleportPosition)
-					end
-				end)
-
-				repeat
-					task.wait()
-				until (teleportPosition - root.Position).Magnitude < 10
-
-				con:Disconnect()
-				characterAddedConnection:Disconnect()
-			end)
-		end
-	end
-
-	TeleportBed = GuiLibrary.ObjectsThatCanBeSaved.BlatantWindow.Api.CreateOptionsButton({
-		Name = "BedTeleport",
-		HoverText = "Randomly teleports you to a bed | Decided to make my own since i was feeling bad for skidding the old one",
-		Function = function(callback)
-			if callback then
-				lplr = game:GetService("Players").LocalPlayer
-				chr = lplr.Character
-				if lplr and chr then
-					teleportToBed()
-				end
-				TeleportBed.ToggleButton(false)
-			end
-		end
-	})
-end)
-
-
-runFunction(function()
-	local transformed = false
-	local SaladwareGameTheme = {["Enabled"] = false}
-	local themeselected = {["Value"] = "OldBedwars"}
-
-	local themefunctions = {
-		chillpurple = function() 
-			task.spawn(function()
-				game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=5260808177"
-				game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=5260653793"
-				game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=5260817288"
-				game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=5260800833"
-				game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=5260811073"
-				game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=5260824661"
-				game.Lighting.FogColor = Color3.new(236, 88, 241)
-				game.Lighting.FogEnd = "200"
-				game.Lighting.FogStart = "0"
-				game.Lighting.Ambient = Color3.new(0.5, 0, 1)
-			end)
-		end,
-        space = function() 
-			task.spawn(function()
-                game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=1735468027"
-                game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=1735500192"
-                game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=1735467260"
-                game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=1735467682"
-                game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=1735466772"
-                game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=1735500898"
-                game.Lighting.FogColor = Color3.new(236, 88, 241)
-                game.Lighting.FogEnd = "200"
-                game.Lighting.FogStart = "0"
-                game.Lighting.Ambient = Color3.new(0.5, 0, 1)
-			end)
-		end
-	}
-
-	SaladwareGameTheme = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
-		["Name"] = "SaladwareGameTheme",
-		["Function"] = function(callback) 
-			if callback then 
-				if not transformed then
-					transformed = true
-					themefunctions[themeselected["Value"]]()
-				else
-					SaladwareGameTheme["ToggleButton"](false)
-				end
-			else
-				game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=7018684000"
-				game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=6334928194"
-				game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=7018684000"
-				game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=7018684000"
-				game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=7018684000"
-				game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=7018689553"
-				game.Lighting.FogColor = Color3.new(1, 1, 1)
-				game.Lighting.FogEnd = "10000"
-				game.Lighting.FogStart = "0"
-				game.Lighting.Ambient = Color3.new(0, 0, 0)
-			end
-		end,
-		["ExtraText"] = function()
-			return themeselected["Value"]
-		end
-	})
-	themeselected = SaladwareGameTheme.CreateDropdown({
-		["Name"] = "Theme",
-		["Function"] = function() end,
-		["List"] = {"chillpurple", "space"}
-	})
-end)
-
-
-runFunction(function()
-	local Enabled = false
-	local anim = {Enabled = false}
-    anim = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-        Name = "GoofyAnimationChanger",
-        Function = function(callback)
-			Enabled = callback
-			if Enabled then
-				task.spawn(function()
-				local Animate = game:GetService("Players").LocalPlayer.Character.Animate
-				----Cartoony
-				if animrun.Value == "Cartoony" then
-					Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921076136" 	
-            end
-	if animwalk.Value == "Cartoony" then
-		Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921082452"
-	end
-	if animfall.Value == "Cartoony" then
-		Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921077030"
-        end
-		if animjump.Value == "Cartoony" then
-			Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921078135"
-		end
-		if animidle.Value == "Cartoony" then
-			Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921071918"
-			Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921072875"
-		end
-		if animclimb.Value == "Cartoony" then
-			Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921070953"
-		end
-		----Levitation
-				if animrun.Value == "Levitation" then
-					Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921135644" 	
-            end
-	
-			if animwalk.Value == "Levitation" then
-		Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921140719"
-	end
-	if animfall.Value == "Levitation" then
-		Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921136539"
-        end
-		if animjump.Value == "Levitation" then
-			Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921137402"
-		end
-		if animidle.Value == "Levitation" then
-			Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921132962"
-			Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921133721"
-		end
-			if animwalk.Value == "Levitation" then
-		Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921140719"
-	end
-	if animfall.Value == "Levitation" then
-		Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921136539"
-        end
-		if animjump.Value == "Levitation" then
-			Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921137402"
-		end
-		if animidle.Value == "Levitation" then
-			Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921132962"
-			Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921133721"
-		end
-		if animclimb.Value == "Levitation" then
-			Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921132092"
-		end
----Robot
-		if animrun.Value == "Robot" then
-			Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921250460" 	
-	end
-
-	if animwalk.Value == "Robot" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921255446"
-end
-if animfall.Value == "Robot" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921251156"
-end
-if animjump.Value == "Robot" then
-	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921252123"
-end
-if animidle.Value == "Robot" then
-	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921248039"
-	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921248831"
-end
-if animclimb.Value == "Robot" then
-	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921247141"
-end
----Stylish
-if animrun.Value == "Stylish" then
-			Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921276116" 	
-	end
-	if animwalk.Value == "Stylish" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921283326"
-end
-if animfall.Value == "Stylish" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921278648"
-end
-if animjump.Value == "Stylish" then
-	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921279832"
-end
-if animidle.Value == "Stylish" then
-	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921272275"
-	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921273958"
-end
-if animclimb.Value == "Stylish" then
-	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921271391"
-end
----Superhero
-if animrun.Value == "Superhero" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921291831" 	
-end
-if animwalk.Value == "Superhero" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921298616"
-end
-if animfall.Value == "Superhero" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921293373"
-end
-if animjump.Value == "Superhero" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921294559"
-end
-if animidle.Value == "Superhero" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921288909"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921290167"
-end
-if animclimb.Value == "Superhero" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921286911"
-end
----Zombie (this animation is garbage lol)
-if animrun.Value == "Zombie" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682" 	
-end
-if animwalk.Value == "Zombie" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921355261"
-end
-if animfall.Value == "Zombie" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921350320"
-warningNotification("Spider","Spider doesn't work well with the Zombie fall. So don't recommend using it",5)
-end
-if animjump.Value == "Zombie" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921351278"
-end
-if animidle.Value == "Zombie" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921344533"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921345304"
-end
-if animclimb.Value == "Zombie" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921343576"
-end
----Ninja
-if animrun.Value == "Ninja" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921157929" 	
-end
-if animwalk.Value == "Ninja" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921162768"
-end
-if animfall.Value == "Ninja" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921159222"
-end
-if animjump.Value == "Ninja" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921160088"
-end
-if animidle.Value == "Ninja" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921155160"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921155867"
-end
-if animclimb.Value == "Ninja" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921154678"
-end
----Knight
-if animrun.Value == "Knight" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921121197" 	
-end
-if animwalk.Value == "Knight" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921127095"
-end
-if animfall.Value == "Knight" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921122579"
-end
-if animjump.Value == "Knight" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921123517"
-end
-if animidle.Value == "Knight" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921117521"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921118894"
-end
-if animclimb.Value == "Knight" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921116196"
-end
----Mage
-if animrun.Value == "Mage" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921148209" 	
-end
-if animwalk.Value == "Mage" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921152678"
-end
-if animfall.Value == "Mage" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921148939"
-end
-if animjump.Value == "Mage" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921149743"
-end
-if animidle.Value == "Mage" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921144709"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921145797"
-end
-if animclimb.Value == "Mage" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921143404"
-end
----Pirate
-if animrun.Value == "Pirate" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=750783738" 	
-end
-if animwalk.Value == "Pirate" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=750785693"
-end
-if animfall.Value == "Pirate" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=750780242"
-end
-if animjump.Value == "Pirate" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=750782230"
-end
-if animidle.Value == "Pirate" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=750781874"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=750782770"
-end
-if animclimb.Value == "Pirate" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=750779899"
-end
----Elder
-if animrun.Value == "Elder" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921104374" 	
-end
-if animwalk.Value == "Elder" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921111375"
-end
-if animfall.Value == "Elder" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921105765"
-end
-if animjump.Value == "Elder" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921107367"
-end
-if animidle.Value == "Elder" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921101664"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921102574"
-end
-if animclimb.Value == "Elder" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921100400"
-end
----Toy (my favorite)
-if animrun.Value == "Toy" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921306285" 	
-end
-if animwalk.Value == "Toy" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921312010"
-end
-if animfall.Value == "Toy" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921307241"
-end
-if animjump.Value == "Toy" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921308158"
-end
-if animidle.Value == "Toy" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921301576"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921302207"
-end
-if animclimb.Value == "Toy" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921300839"
-end
----Bubbly
-if animrun.Value == "Bubbly" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921057244" 	
-end
-if animwalk.Value == "Bubbly" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10980888364"
-end
-if animfall.Value == "Bubbly" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921061530"
-end
-if animjump.Value == "Bubbly" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921062673"
-end
-if animidle.Value == "Bubbly" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921054344"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921055107"
-end
-if animclimb.Value == "Bubbly" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921053544"
-end
----Astronaut
-if animrun.Value == "Astronaut" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921039308" 	
-end
-if animwalk.Value == "Astronaut" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921046031"
-end
-if animfall.Value == "Astronaut" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921040576"
-end
-if animjump.Value == "Astronaut" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921042494"
-end
-if animidle.Value == "Astronaut" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921034824"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921036806"
-end
-if animclimb.Value == "Astronaut" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921032124"
-end
----Vampire
-if animrun.Value == "Vampire" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921320299" 	
-end
-if animwalk.Value == "Vampire" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921326949"
-end
-if animfall.Value == "Vampire" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921321317"
-end
-if animjump.Value == "Vampire" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921322186"
-end
-if animidle.Value == "Vampire" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921315373"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921316709"
-end
-if animclimb.Value == "Vampire" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921314188"
-end
----Werewolf
-if animrun.Value == "Werewolf" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921336997" 	
-end
-if animwalk.Value == "Werewolf" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921342074"
-end
-if animfall.Value == "Werewolf" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921337907"
-end
-if animjump.Value == "Werewolf" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
-end
-if animidle.Value == "Werewolf" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921330408"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921333667"
-end
-if animclimb.Value == "Werewolf" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921329322"
-end
----Rthro
-if animrun.Value == "Rthro" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921261968" 	
-end
-if animwalk.Value == "Rthro" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921269718"
-end
-if animfall.Value == "Rthro" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921262864"
-end
-if animjump.Value == "Rthro" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921263860"
-end
-if animidle.Value == "Rthro" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921258489"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921259953"
-end
-if animclimb.Value == "Rthro" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921257536"
-end
----Oldschool
-if animrun.Value == "Oldschool" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921240218" 	
-end
-if animwalk.Value == "Oldschool" then
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921244891"
-end
-if animfall.Value == "Oldschool" then
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921241244"
-end
-if animjump.Value == "Oldschool" then
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921242013"
-end
-if animidle.Value == "Oldschool" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921230744"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921232093"
-end
-if animclimb.Value == "Oldschool" then
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921229866"
-end
----Mr.Toilet
-if animrun.Value == "Toilet" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=4417979645" 	
-end
-if animidle.Value == "Toilet" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=4417977954"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=4417978624"
-end
----Ud'Zal
-if animrun.Value == "Rthro Heavy Run" then
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=3236836670" 	
-end
-if animidle.Value == "Ud'zal" then
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=3303162274"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=3303162549"
-end
-if animwalk.Value == "Ud'zal" then
-	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=3303162967"
-	end
-end)
-	end
-	end
-    })
-	animrun = anim.CreateDropdown({
-		Name = "Run",
-		List = {"Cartoony", "Levitation", "Robot", "Stylish", "Superhero", "Zombie", "Ninja", "Knight", "Mage", "Pirate", "Elder", "Toy", "Bubbly", "Astronaut", "Vampire", "Werewolf", "Rthro", "Oldschool", "Toilet", "Rthro Heavy Run"},
-		Function = function() end
-	})
-
-	animwalk = anim.CreateDropdown({
-		Name = "Walk",
-		List = {"Cartoony", "Levitation", "Robot", "Stylish", "Superhero", "Zombie", "Ninja", "Knight", "Mage", "Pirate", "Elder", "Toy", "Bubbly", "Astronaut", "Vampire", "Werewolf", "Rthro", "Oldschool", "Ud'zal"},
-		Function = function() end
-	})
-
-	animfall = anim.CreateDropdown({
-		Name = "Fall",
-		List = {"Cartoony", "Levitation", "Robot", "Stylish", "Superhero", "Zombie", "Ninja", "Knight", "Mage", "Pirate", "Elder", "Toy", "Bubbly", "Astronaut", "Vampire", "Werewolf", "Rthro", "Oldschool"},
-		Function = function() end
-	})
-
-	animjump = anim.CreateDropdown({
-		Name = "Jump",
-		List = {"Cartoony", "Levitation", "Robot", "Stylish", "Superhero", "Zombie", "Ninja", "Knight", "Mage", "Pirate", "Elder", "Toy", "Bubbly", "Astronaut", "Vampire", "Werewolf", "Rthro", "Oldschool"},
-		Function = function() end
-	})
-
-	animidle = anim.CreateDropdown({
-		Name = "Idle",
-		List = {"Cartoony", "Levitation", "Robot", "Stylish", "Superhero", "Zombie", "Ninja", "Knight", "Mage", "Pirate", "Elder", "Toy", "Bubbly", "Astronaut", "Vampire", "Werewolf", "Rthro", "Oldschool", "Toilet", "Ud'zal"},
-		Function = function() end
-	})
-
-	animclimb = anim.CreateDropdown({
-		Name = "Climb",
-		List = {"Cartoony", "Levitation", "Robot", "Stylish", "Superhero", "Zombie", "Ninja", "Knight", "Mage", "Pirate", "Elder", "Toy", "Bubbly", "Astronaut", "Vampire", "Werewolf", "Rthro", "Oldschool"},
-		Function = function() end
-	})
-end)
-	HRPFUCKER = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-		Name = "HRPFucker",
-		Function = function(callback)
-		if callback then 
-		game.Players.LocalPlayer.Character.Humanoid:Remove()
-Instance.new('Humanoid', game.Players.LocalPlayer.Character)
-game:GetService("Workspace")[game.Players.LocalPlayer.Name]:FindFirstChildOfClass(
-'Humanoid').HipHeight = 2
-			else
-				warningNotification("SaladWare", "Reset To Disable", 5)
-			end
-		end
-	})
-
-	Logo = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
-		Name = "Logo",
-		Function = function(callback)
-		if callback then 
-		local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local UIGradient = Instance.new("UIGradient")
-local Frame_2 = Instance.new("Frame")
-local UIGradient_2 = Instance.new("UIGradient")
-local Frame_3 = Instance.new("Frame")
-local TextLabel_2 = Instance.new("TextLabel")
-local UIGradient_3 = Instance.new("UIGradient")
-local ScreenGui_2 = Instance.new("ScreenGui")
-
-
-
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.00823045336, 0, 0.0187031627, 0)
-Frame.Size = UDim2.new(0, 319, 0, 34)
-
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(-0.00186395645, 0, -0.194586992, 0)
-TextLabel.Size = UDim2.new(0, 173, 0, 47)
-TextLabel.Font = Enum.Font.SciFi
-TextLabel.Text = "SALADWARE"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
-
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(12, 255, 48)), ColorSequenceKeypoint.new(0.21, Color3.fromRGB(245, 255, 51)), ColorSequenceKeypoint.new(0.42, Color3.fromRGB(255, 131, 74)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(255, 19, 54)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(189, 23, 255)), ColorSequenceKeypoint.new(0.83, Color3.fromRGB(16, 8, 255)), ColorSequenceKeypoint.new(0.95, Color3.fromRGB(7, 251, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(19, 255, 47))}
-UIGradient.Parent = TextLabel
-
-Frame_2.Parent = Frame
-Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame_2.BorderSizePixel = 0
-Frame_2.Position = UDim2.new(0, 0, -0.117647059, 0)
-Frame_2.Size = UDim2.new(0, 319, 0, 4)
-
-UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 204, 0)), ColorSequenceKeypoint.new(0.12, Color3.fromRGB(255, 0, 4)), ColorSequenceKeypoint.new(0.36, Color3.fromRGB(255, 6, 222)), ColorSequenceKeypoint.new(0.44, Color3.fromRGB(147, 14, 255)), ColorSequenceKeypoint.new(0.57, Color3.fromRGB(25, 17, 255)), ColorSequenceKeypoint.new(0.72, Color3.fromRGB(15, 255, 239)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(10, 255, 161)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(111, 255, 0))}
-UIGradient_2.Parent = Frame_2
-
-Frame_3.Parent = Frame
-Frame_3.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
-Frame_3.BorderSizePixel = 0
-Frame_3.Position = UDim2.new(0.592476487, 0, 0.0882352963, 0)
-Frame_3.Size = UDim2.new(0, 4, 0, 31)
-
-TextLabel_2.Parent = Frame
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.Position = UDim2.new(0.665886223, 0, 0.146618754, 0)
-TextLabel_2.Size = UDim2.new(0, 97, 0, 25)
-TextLabel_2.Font = Enum.Font.SciFi
-TextLabel_2.Text = "FPS: N/A"
-TextLabel_2.TextColor3 = Color3.fromRGB(231, 137, 255)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 14.000
-TextLabel_2.TextStrokeTransparency = 0.000
-TextLabel_2.TextWrapped = true
-
-UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(78, 8, 255)), ColorSequenceKeypoint.new(0.11, Color3.fromRGB(214, 10, 255)), ColorSequenceKeypoint.new(0.23, Color3.fromRGB(48, 7, 255)), ColorSequenceKeypoint.new(0.45, Color3.fromRGB(182, 10, 255)), ColorSequenceKeypoint.new(0.67, Color3.fromRGB(143, 7, 255)), ColorSequenceKeypoint.new(0.85, Color3.fromRGB(17, 0, 255)), ColorSequenceKeypoint.new(0.98, Color3.fromRGB(238, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient_3.Parent = TextLabel_2
-
-ScreenGui_2.Parent = ScreenGui
-ScreenGui_2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-
-
-local function GCJZ_fake_script()  
-	local script = Instance.new('LocalScript', TextLabel)
-
-	local TextLabel = script.Parent
-	
-	local gradient = TextLabel.UIGradient
-	
-	local ts = game:GetService("TweenService")
-	
-	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
-	
-	local offset = {Offset = Vector2.new(1, 0)}
-	
-	local create = ts:Create(gradient, ti, offset)
-	
-	local startingPos = Vector2.new(-1, 0)
-	
-	local list = {} 
-	
-	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
-	
-	local counter = 0
-	
-	local status = "down" 
-	
-	gradient.Offset = startingPos
-	
-	local function rainbowColors()
-	
-		local sat, val = 255, 255 
-	
-		for i = 1, 15 do 
-	
-			local hue = i * 17 
-	
-			table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
-	
-		end
-	
-	end
-	
-	rainbowColors()
-	
-	gradient.Color = s({
-	
-		kpt(0, list[#list]),
-	
-		kpt(0.5, list[#list - 1]),
-	
-		kpt(1, list[#list - 2])
-	
-	})
-	
-	counter = #list
-	
-	local function animate()
-	
-		create:Play()
-	
-		create.Completed:Wait() 
-	
-		gradient.Offset = startingPos 
-	
-		gradient.Rotation = 180
-	
-		if counter == #list - 1 and status == "down" then
-	
-			gradient.Color = s({
-	
-				kpt(0, gradient.Color.Keypoints[1].Value),
-	
-				kpt(0.5, list[#list]), 
-	
-				kpt(1, list[1]) 
-	
-			})
-	
-			counter = 1
-	
-			status = "up" 
-	
-		elseif counter == #list and status == "down" then 
-	
-			gradient.Color = s({
-	
-				kpt(0, gradient.Color.Keypoints[1].Value),
-	
-				kpt(0.5, list[1]),
-	
-				kpt(1, list[2])
-	
-			})
-	
-			counter = 2
-	
-			status = "up"
-	
-		elseif counter <= #list - 2 and status == "down" then 
-	
-			gradient.Color = s({
-	
-				kpt(0, gradient.Color.Keypoints[1].Value),
-	
-				kpt(0.5, list[counter + 1]), 
-	
-				kpt(1, list[counter + 2])
-	
-			})
-	
-			counter = counter + 2
-	
-			status = "up"
-	
-		end
-	
-		create:Play()
-	
-		create.Completed:Wait()
-	
-		gradient.Offset = startingPos
-	
-		gradient.Rotation = 0 
-	
-		if counter == #list - 1 and status == "up" then
-	
-			gradient.Color = s({ 
-	
-	
-	
-				kpt(0, list[1]), 
-	
-				kpt(0.5, list[#list]), 
-	
-				kpt(1, gradient.Color.Keypoints[3].Value)
-	
-			})
-	
-			counter = 1
-	
-			status = "down"
-	
-		elseif counter == #list and status == "up" then
-	
-			gradient.Color = s({
-	
-				kpt(0, list[2]),
-	
-				kpt(0.5, list[1]), 
-	
-				kpt(1, gradient.Color.Keypoints[3].Value)
-	
-			})
-	
-			counter = 2
-	
-			status = "down"
-	
-		elseif counter <= #list - 2 and status == "up" then
-	
-			gradient.Color = s({
-	
-				kpt(0, list[counter + 2]), 
-	
-				kpt(0.5, list[counter + 1]), 
-	
-				kpt(1, gradient.Color.Keypoints[3].Value) 	
-	
-			})
-	
-			counter = counter + 2
-	
-			status = "down"
-	
-		end
-	
-		animate()
-	
-	end
-	
-	animate()
-end
-coroutine.wrap(GCJZ_fake_script)()
-local function LCHONZ_fake_script() -- Frame_2.LocalScript 
-	local script = Instance.new('LocalScript', Frame_2)
-
-	local Frame = script.Parent
-	
-	local gradient = Frame.UIGradient
-	
-	local ts = game:GetService("TweenService")
-	
-	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
-	
-	local offset = {Offset = Vector2.new(1, 0)}
-	
-	local create = ts:Create(gradient, ti, offset)
-	
-	local startingPos = Vector2.new(-1, 0)
-	
-	local list = {} 
-	
-	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
-	
-	local counter = 0
-	
-	local status = "down" 
-	
-	gradient.Offset = startingPos
-	
-	local function rainbowColors()
-	
-		local sat, val = 255, 255 
-	
-		for i = 1, 15 do 
-	
-			local hue = i * 17 
-	
-			table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
-	
-		end
-	
-	end
-	
-	rainbowColors()
-	
-	gradient.Color = s({
-	
-		kpt(0, list[#list]),
-	
-		kpt(0.5, list[#list - 1]),
-	
-		kpt(1, list[#list - 2])
-	
-	})
-	
-	counter = #list
-	
-	local function animate()
-	
-		create:Play()
-	
-		create.Completed:Wait() 
-	
-		gradient.Offset = startingPos 
-	
-		gradient.Rotation = 180
-	
-		if counter == #list - 1 and status == "down" then
-	
-			gradient.Color = s({
-	
-				kpt(0, gradient.Color.Keypoints[1].Value),
-	
-				kpt(0.5, list[#list]), 
-	
-				kpt(1, list[1]) 
-	
-			})
-	
-			counter = 1
-	
-			status = "up" 
-	
-		elseif counter == #list and status == "down" then 
-	
-			gradient.Color = s({
-	
-				kpt(0, gradient.Color.Keypoints[1].Value),
-	
-				kpt(0.5, list[1]),
-	
-				kpt(1, list[2])
-	
-			})
-	
-			counter = 2
-	
-			status = "up"
-	
-		elseif counter <= #list - 2 and status == "down" then 
-	
-			gradient.Color = s({
-	
-				kpt(0, gradient.Color.Keypoints[1].Value),
-	
-				kpt(0.5, list[counter + 1]), 
-	
-				kpt(1, list[counter + 2])
-	
-			})
-	
-			counter = counter + 2
-	
-			status = "up"
-	
-		end
-	
-		create:Play()
-	
-		create.Completed:Wait()
-	
-		gradient.Offset = startingPos
-	
-		gradient.Rotation = 0 
-	
-		if counter == #list - 1 and status == "up" then
-	
-			gradient.Color = s({ 
-	
-	
-	
-				kpt(0, list[1]), 
-	
-				kpt(0.5, list[#list]), 
-	
-				kpt(1, gradient.Color.Keypoints[3].Value)
-	
-			})
-	
-			counter = 1
-	
-			status = "down"
-	
-		elseif counter == #list and status == "up" then
-	
-			gradient.Color = s({
-	
-				kpt(0, list[2]),
-	
-				kpt(0.5, list[1]), 
-	
-				kpt(1, gradient.Color.Keypoints[3].Value)
-	
-			})
-	
-			counter = 2
-	
-			status = "down"
-	
-		elseif counter <= #list - 2 and status == "up" then
-	
-			gradient.Color = s({
-	
-				kpt(0, list[counter + 2]), 
-	
-				kpt(0.5, list[counter + 1]), 
-	
-				kpt(1, gradient.Color.Keypoints[3].Value) 	
-	
-			})
-	
-			counter = counter + 2
-	
-			status = "down"
-	
-		end
-	
-		animate()
-	
-	end
-	
-	animate()
-end
-coroutine.wrap(LCHONZ_fake_script)()
-local function CWMPI_fake_script() -- TextLabel_2.LocalScript 
-	local script = Instance.new('LocalScript', TextLabel_2)
-
-	local textlable = script.Parent
-	
-	while wait() do
-		local fps = game.Workspace:GetRealPhysicsFPS()
-		textlable.Text = "FPS: "..math.floor(fps)
-	end
-end
-coroutine.wrap(CWMPI_fake_script)()
-local function TPAKJ_fake_script() -- TextLabel_2.LocalScript 
-	local script = Instance.new('LocalScript', TextLabel_2)
-
-	local TextLabel = script.Parent
-	
-	local gradient = TextLabel.UIGradient
-	
-	local ts = game:GetService("TweenService")
-	
-	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
-	
-	local offset = {Offset = Vector2.new(1, 0)}
-	
-	local create = ts:Create(gradient, ti, offset)
-	
-	local startingPos = Vector2.new(-1, 0)
-	
-	local list = {} 
-	
-	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
-	
-	local counter = 0
-	
-	local status = "down" 
-	
-	gradient.Offset = startingPos
-	
-	local function rainbowColors()
-	
-		local sat, val = 255, 255 
-	
-		for i = 1, 15 do 
-	
-			local hue = i * 17 
-	
-			table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
-	
-		end
-	
-	end
-	
-	rainbowColors()
-	
-	gradient.Color = s({
-	
-		kpt(0, list[#list]),
-	
-		kpt(0.5, list[#list - 1]),
-	
-		kpt(1, list[#list - 2])
-	
-	})
-	
-	counter = #list
-	
-	local function animate()
-	
-		create:Play()
-	
-		create.Completed:Wait() 
-	
-		gradient.Offset = startingPos 
-	
-		gradient.Rotation = 180
-	
-		if counter == #list - 1 and status == "down" then
-	
-			gradient.Color = s({
-	
-				kpt(0, gradient.Color.Keypoints[1].Value),
-	
-				kpt(0.5, list[#list]), 
-	
-				kpt(1, list[1]) 
-	
-			})
-	
-			counter = 1
-	
-			status = "up" 
-	
-		elseif counter == #list and status == "down" then 
-	
-			gradient.Color = s({
-	
-				kpt(0, gradient.Color.Keypoints[1].Value),
-	
-				kpt(0.5, list[1]),
-	
-				kpt(1, list[2])
-	
-			})
-	
-			counter = 2
-	
-			status = "up"
-	
-		elseif counter <= #list - 2 and status == "down" then 
-	
-			gradient.Color = s({
-	
-				kpt(0, gradient.Color.Keypoints[1].Value),
-	
-				kpt(0.5, list[counter + 1]), 
-	
-				kpt(1, list[counter + 2])
-	
-			})
-	
-			counter = counter + 2
-	
-			status = "up"
-	
-		end
-	
-		create:Play()
-	
-		create.Completed:Wait()
-	
-		gradient.Offset = startingPos
-	
-		gradient.Rotation = 0 
-	
-		if counter == #list - 1 and status == "up" then
-	
-			gradient.Color = s({ 
-	
-	
-	
-				kpt(0, list[1]), 
-	
-				kpt(0.5, list[#list]), 
-	
-				kpt(1, gradient.Color.Keypoints[3].Value)
-	
-			})
-	
-			counter = 1
-	
-			status = "down"
-	
-		elseif counter == #list and status == "up" then
-	
-			gradient.Color = s({
-	
-				kpt(0, list[2]),
-	
-				kpt(0.5, list[1]), 
-	
-				kpt(1, gradient.Color.Keypoints[3].Value)
-	
-			})
-	
-			counter = 2
-	
-			status = "down"
-	
-		elseif counter <= #list - 2 and status == "up" then
-	
-			gradient.Color = s({
-	
-				kpt(0, list[counter + 2]), 
-	
-				kpt(0.5, list[counter + 1]), 
-	
-				kpt(1, gradient.Color.Keypoints[3].Value) 	
-	
-			})
-	
-			counter = counter + 2
-	
-			status = "down"
-	
-		end
-	
-		animate()
-	
-	end
-	
-	animate()
-end
-coroutine.wrap(TPAKJ_fake_script)()
-			else
-				ScreenGui:Destroy()
-				Frame:Destroy()
-			end
-		end
-	})
-
-	runFunction(function()
-		local Enabled = false
-		local FPSUnlocker = {Enabled = false}
-		FPSUnlocker = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-			Name = "FPSUnlocker",
-			Function = function(callback)
-				Enabled = callback
-				if Enabled then 
-					task.spawn(function()
-						repeat
-							task.wait()
-							setfpscap(FPSAmount.Value)
-						until (not Enabled)
-					end)
-				else
-					setfpscap(60)
-				end
-			end
-		})
-		FPSAmount = FPSUnlocker.CreateSlider({
-			Name = "FPS",
-			Min = 60,
-			Max = 360, 
-			Function = function(val) end,
-			Default = 360
-		})
-	end)
-
-	TexturePack = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-		Name = "My First Texture Pack (Shit)",
-		Function = function(callback)
-			if callback then 
-				warningNotification("SaladWare", "Loading in 5 seconds, also you cant turn it off lol", 5)
-				
-			--mastadanws method, i just replaced the assets
-            local Settings = {
-                Resize = true, 
-                ResizeNum = 0.7, 
-                Color = Color3.fromRGB(102, 51, 153), 
-                LoadTime = 1 
-            }
-
-            repeat task.wait() until game:IsLoaded()
-            local bwgames = {6872274481,8444591321,8560631822}
-            if not table.find(bwgames,game.PlaceId) then return end
-            task.wait(Settings.LoadTime)
-            local cam = game:GetService("Workspace").Camera
-            cam:WaitForChild("Viewmodel")
-            cam.Viewmodel.ChildAdded:Connect(function(model)
-                if model:FindFirstChild("Handle") then
-                    local handle = model:FindFirstChild("Handle")
-                    local name = string.lower(model.Name)
-                    handle.Material = Enum.Material.Glass
-                    handle.TextureID = "rbxassetid://13304849913"
-                    handle.Color = Settings.Color
-                    if name:find("sword") then
-                        handle.MeshId = "rbxassetid://13293006561"
-                    elseif name:find("pickaxe") then
-                        handle.MeshId = "rbxassetid://13303184641"
-                    if Settings.Resize == true then
-                        handle.Size = handle.Size / Settings.ResizeNum
-                    end
-                    end
-                end
-            end)
-			end
-		end
-})
-
-
-warningNotification("SaladWare", "Thanks for using my config!", 10)
-
-
 
 runFunction(function()
 	local NoFall = {Enabled = false}
@@ -12038,4 +10498,1141 @@ task.spawn(function()
 		AutoLeave.ToggleButton(false)
 	end
 end)
-game.StarterGui:SetCore("ChatMakeSystemMessage",  { Text = "[SALADWARE]: Loaded", Color = Color3.fromRGB(22, 700, 13), Font = Enum.Font.Arial, FontSize = Enum.FontSize.Size24 } )
+
+
+local killauraNearPlayer
+runFunction(function()
+	local killauraboxes = {}
+    local killauratargetframe = {Players = {Enabled = false}}
+	local killaurasortmethod = {Value = "Distance"}
+    local killaurarealremote = bedwars.ClientHandler:Get(bedwars.AttackRemote).instance
+    local killauramethod = {Value = "Normal"}
+	local killauraothermethod = {Value = "Normal"}
+    local killauraanimmethod = {Value = "Normal"}
+    local killaurarange = {Value = 14}
+    local killauraangle = {Value = 360}
+    local killauratargets = {Value = 10}
+	local killauraautoblock = {Enabled = false}
+    local killauramouse = {Enabled = false}
+    local killauracframe = {Enabled = false}
+    local killauragui = {Enabled = false}
+    local killauratarget = {Enabled = false}
+    local killaurasound = {Enabled = false}
+    local killauraswing = {Enabled = false}
+	local killaurasync = {Enabled = false}
+    local killaurahandcheck = {Enabled = false}
+    local killaurabaguette = {Enabled = false}
+    local killauraanimation = {Enabled = false}
+	local killauraanimationtween = {Enabled = false}
+	local killauracolor = {Value = 0.44}
+	local killauranovape = {Enabled = false}
+	local killauratargethighlight = {Enabled = false}
+	local killaurarangecircle = {Enabled = false}
+	local killaurarangecirclepart
+	local killauraaimcircle = {Enabled = false}
+	local killauraaimcirclepart
+	local killauraparticle = {Enabled = false}
+	local killauraparticlepart
+    local Killauranear = false
+    local killauraplaying = false
+    local oldViewmodelAnimation = function() end
+    local oldPlaySound = function() end
+    local originalArmC0 = nil
+	local killauracurrentanim
+	local animationdelay = tick()
+
+	local function getStrength(plr)
+		local inv = bedwarsStore.inventories[plr.Player]
+		local strength = 0
+		local strongestsword = 0
+		if inv then
+			for i,v in pairs(inv.items) do 
+				local itemmeta = bedwars.ItemTable[v.itemType]
+				if itemmeta and itemmeta.sword and itemmeta.sword.damage > strongestsword then 
+					strongestsword = itemmeta.sword.damage / 100
+				end	
+			end
+			strength = strength + strongestsword
+			for i,v in pairs(inv.armor) do 
+				local itemmeta = bedwars.ItemTable[v.itemType]
+				if itemmeta and itemmeta.armor then 
+					strength = strength + (itemmeta.armor.damageReductionMultiplier or 0)
+				end
+			end
+			strength = strength
+		end
+		return strength
+	end
+
+	local kitpriolist = {
+		hannah = 5,
+		spirit_assassin = 4,
+		dasher = 3,
+		jade = 2,
+		regent = 1
+	}
+
+	local killaurasortmethods = {
+		Distance = function(a, b)
+			return (a.RootPart.Position - entityLibrary.character.HumanoidRootPart.Position).Magnitude < (b.RootPart.Position - entityLibrary.character.HumanoidRootPart.Position).Magnitude
+		end,
+		Health = function(a, b) 
+			return a.Humanoid.Health < b.Humanoid.Health
+		end,
+		Threat = function(a, b) 
+			return getStrength(a) > getStrength(b)
+		end,
+		Kit = function(a, b)
+			return (kitpriolist[a.Player:GetAttribute("PlayingAsKit")] or 0) > (kitpriolist[b.Player:GetAttribute("PlayingAsKit")] or 0)
+		end
+	}
+
+	local originalNeckC0
+	local originalRootC0
+	local anims = {
+				Latest = {
+					{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-51)), Time = 0.1},
+					{CFrame = CFrame.new(0.16, -1.16, 1) * CFrame.Angles(math.rad(-179), math.rad(54), math.rad(33)), Time = 0.1}
+				},
+				Normal = {
+					{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.05},
+					{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.05}
+				},
+				Slow = {
+					{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.15},
+					{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.15}
+				},
+				New = {
+					{CFrame = CFrame.new(0.69, -0.77, 1.47) * CFrame.Angles(math.rad(-33), math.rad(57), math.rad(-81)), Time = 0.12},
+					{CFrame = CFrame.new(0.74, -0.92, 0.88) * CFrame.Angles(math.rad(147), math.rad(71), math.rad(53)), Time = 0.12}
+				},
+				["Vertical Spin"] = {
+					{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-90), math.rad(8), math.rad(5)), Time = 0.1},
+					{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(180), math.rad(3), math.rad(13)), Time = 0.1},
+					{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(90), math.rad(-5), math.rad(8)), Time = 0.1},
+					{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(-0), math.rad(-0)), Time = 0.1}
+				},
+				["Horizontal Spin"] = {
+					{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(-35), math.rad(-95), math.rad(-130)), Time = 0.4},
+					{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(35), math.rad(95), math.rad(130)), Time = 0.4},
+					{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(35), math.rad(35), math.rad(530)), Time = 0.04},
+					{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(-35), math.rad(-35), math.rad(-530)), Time = 0.04}
+				},
+				Exhibition = {
+					{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-0), math.rad(0), math.rad(-0)), Time = 0.1},
+					{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-4), math.rad(0), math.rad(-3)), Time = 0.2}
+				},
+				["Exhibition Fast"] = {
+					{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.01},
+					{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.01},
+					{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.01},
+					{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.01},
+					{CFrame = CFrame.new(0.63, -0.1, 1.37) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.1}
+				},
+				OldAstralAnim = {
+					{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.1},
+					{CFrame = CFrame.new(-1, 1, -2.2) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.1}
+				},
+				SlowOldAstralAnim = {
+					{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.4},
+					{CFrame = CFrame.new(-1, 1, -2.2) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.4}
+				},
+				ZylaAnim = {
+					{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(-math.rad(190), math.rad(110), -math.rad(90)), Time = 0.3},
+					{CFrame = CFrame.new(0.3, -2, 2) * CFrame.Angles(math.rad(120), math.rad(140), math.rad(320)), Time = 0.3}
+				},
+				SliceAnim = {
+					{CFrame = CFrame.new(3, -4, 3) * CFrame.Angles(math.rad(90), math.rad(90), math.rad(90)), Time = 0.2},
+					{CFrame = CFrame.new(-4, 3, -4) * CFrame.Angles(math.rad(111), math.rad(222), math.rad(333)), Time = 0.2}
+				},
+				SlowSliceAnim = {
+					{CFrame = CFrame.new(3, -4, 3) * CFrame.Angles(math.rad(90), math.rad(90), math.rad(90)), Time = 0.4},
+					{CFrame = CFrame.new(-4, 3, -4) * CFrame.Angles(math.rad(111), math.rad(222), math.rad(333)), Time = 0.4}
+				},
+				ThrowBackAnim = {
+					{CFrame = CFrame.new(-3, -3, -3) * CFrame.Angles(math.rad(255), math.rad(122), math.rad(321)), Time = 0.2},
+					{CFrame = CFrame.new(1, 1, 1) * CFrame.Angles(math.rad(156), math.rad(54), math.rad(91)), Time = 0.2}
+				},
+				SlowThrowBackAnim = {
+					{CFrame = CFrame.new(-3, -3, -3) * CFrame.Angles(math.rad(255), math.rad(122), math.rad(321)), Time = 0.5},
+					{CFrame = CFrame.new(1, 1, 1) * CFrame.Angles(math.rad(156), math.rad(54), math.rad(91)), Time = 0.5}
+				},
+				xarq0n1 = {
+					{CFrame = CFrame.new(0, -3, 0) * CFrame.Angles(-math.rad(120), math.rad(530), -math.rad(220)), Time = 0.2},
+					{CFrame = CFrame.new(0.9, 0, 1.5) * CFrame.Angles(math.rad(7), math.rad(30), math.rad(820)), Time = 0.2}
+				},
+				xarq0n2 = {
+					{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(190)), Time = 0.8},
+					{CFrame = CFrame.new(-1, 1, -2.2) * CFrame.Angles(math.rad(200), math.rad(40), math.rad(1)), Time = 0.8}
+				},
+				xarq0n3 = {
+					{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(195), math.rad(95), math.rad(130)), Time = 0.1},
+					{CFrame = CFrame.new(-1, 1, -2.2) * CFrame.Angles(math.rad(300), math.rad(40), math.rad(1)), Time = 0.2}
+				},
+				Swiss = {
+					{CFrame = CFrame.new(1, -1.4, 1.4) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.15},
+					{CFrame = CFrame.new(-1.4, 1, -1) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.15}
+				},
+				SlowSwiss = {
+					{CFrame = CFrame.new(1, -1.4, 1.4) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.25},
+					{CFrame = CFrame.new(-1.4, 1, -1) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.25}
+				},
+				SlowZylaAnim = {
+					{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(-math.rad(70), math.rad(10), -math.rad(250)), Time = 0.7},
+					{CFrame = CFrame.new(0.3, -2, 2) * CFrame.Angles(math.rad(69), math.rad(50), math.rad(110)), Time = 0.6}
+					},
+									["Hamsterware"] = {
+					{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(40), math.rad(-90)), Time = 0.1},
+					{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(70), math.rad(-135)), Time = 0.1}
+				},
+						["CatV5"] = {
+								{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(25), math.rad(-60)), Time = 0.1},
+					{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-40), math.rad(40), math.rad(-90)), Time = 0.1},
+					{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(55), math.rad(-115)), Time = 0.1},
+					{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-50), math.rad(70), math.rad(-60)), Time = 0.1},
+								{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(70), math.rad(-70)), Time = 0.1}
+				},
+				["Astral"] = {
+					{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0},
+					{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.900},
+					{CFrame = CFrame.new(0.95, -1.06, -2.25) * CFrame.Angles(math.rad(-179), math.rad(61), math.rad(80)), Time = 0.15}
+				},
+				["Leaked"] = {
+					{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0},
+					{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(16), math.rad(59), math.rad(-90)), Time = 0.15}
+				},
+				["Slide2"] = {
+					{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0},
+					{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-171), math.rad(47), math.rad(74)), Time = 0.16}
+				},
+				["Femboy"] = {
+					{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(1), math.rad(-7), math.rad(7)), Time = 0},
+					{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-0), math.rad(0), math.rad(-0)), Time = 0.08},
+					{CFrame = CFrame.new(-0.01, 0, 0) * CFrame.Angles(math.rad(-7), math.rad(-7), math.rad(-1)), Time = 0.08},
+					{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(1), math.rad(-7), math.rad(7)), Time = 0.11}
+					},
+					["Kys"] = {
+					{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(50), math.rad(50), math.rad(100)), Time = 0.3},
+					{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(84), math.rad(50), math.rad(50)), Time = 0.3}
+				},
+				Experimental = {
+					{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-70)), Time = 0.1},
+					{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(-160), math.rad(60), math.rad(1)), Time = 0.1},
+					{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-0), math.rad(0), math.rad(-0)), Time = -0.2},
+					{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-22), math.rad(56), math.rad(-106)), Time = 0.1}
+				},
+				["new"] = {
+					{CFrame = CFrame.new(0, 0.9, 0.4) * CFrame.Angles(math.rad(5), math.rad(2), math.rad(20), math.rad(40)), Time = 0.1},
+				}
+			}
+
+
+	local function closestpos(block, pos)
+		local blockpos = block:GetRenderCFrame()
+		local startpos = (blockpos * CFrame.new(-(block.Size / 2))).p
+		local endpos = (blockpos * CFrame.new((block.Size / 2))).p
+		local speedCFrame = block.Position + (pos - block.Position)
+		local x = startpos.X > endpos.X and endpos.X or startpos.X
+		local y = startpos.Y > endpos.Y and endpos.Y or startpos.Y
+		local z = startpos.Z > endpos.Z and endpos.Z or startpos.Z
+		local x2 = startpos.X < endpos.X and endpos.X or startpos.X
+		local y2 = startpos.Y < endpos.Y and endpos.Y or startpos.Y
+		local z2 = startpos.Z < endpos.Z and endpos.Z or startpos.Z
+		return Vector3.new(math.clamp(speedCFrame.X, x, x2), math.clamp(speedCFrame.Y, y, y2), math.clamp(speedCFrame.Z, z, z2))
+	end
+
+	local function getAttackData()
+		if GuiLibrary.ObjectsThatCanBeSaved["Lobby CheckToggle"].Api.Enabled then 
+			if bedwarsStore.matchState == 0 then return false end
+		end
+		if killauramouse.Enabled then
+			if not inputService:IsMouseButtonPressed(0) then return false end
+		end
+		if killauragui.Enabled then
+			if #bedwars.AppController:getOpenApps() > (bedwarsStore.equippedKit == "hannah" and 4 or 3) then return false end
+		end
+		local sword = killaurahandcheck.Enabled and bedwarsStore.localHand or getSword()
+		if not sword or not sword.tool then return false end
+		local swordmeta = bedwars.ItemTable[sword.tool.Name]
+		if killaurahandcheck.Enabled then
+			if bedwarsStore.localHand.Type ~= "sword" or bedwars.KatanaController.chargingMaid then return false end
+		end
+		return sword, swordmeta
+	end
+
+	local function autoBlockLoop()
+		if not killauraautoblock.Enabled or not Killaura.Enabled then return end
+		repeat
+			if bedwarsStore.blockPlace < tick() and entityLibrary.isAlive then
+				local shield = getItem("infernal_shield")
+				if shield then 
+					switchItem(shield.tool)
+					if not lplr.Character:GetAttribute("InfernalShieldRaised") then
+						bedwars.InfernalShieldController:raiseShield()
+					end
+				end
+			end
+			task.wait()
+		until (not Killaura.Enabled) or (not killauraautoblock.Enabled)
+	end
+
+    Killaura = GuiLibrary.ObjectsThatCanBeSaved.BlatantWindow.Api.CreateOptionsButton({
+        Name = "KillAura v2",
+        Function = function(callback)
+            if callback then
+				if killauraaimcirclepart then killauraaimcirclepart.Parent = gameCamera end
+				if killaurarangecirclepart then killaurarangecirclepart.Parent = gameCamera end
+				if killauraparticlepart then killauraparticlepart.Parent = gameCamera end
+
+				task.spawn(function()
+					local oldNearPlayer
+					repeat
+						task.wait()
+						if (killauraanimation.Enabled and not killauraswing.Enabled) then
+							if killauraNearPlayer then
+								pcall(function()
+									if originalArmC0 == nil then
+										originalArmC0 = gameCamera.Viewmodel.RightHand.RightWrist.C0
+									end
+									if killauraplaying == false then
+										killauraplaying = true
+										for i,v in pairs(anims[killauraanimmethod.Value]) do 
+											if (not Killaura.Enabled) or (not killauraNearPlayer) then break end
+											if not oldNearPlayer and killauraanimationtween.Enabled then
+												gameCamera.Viewmodel.RightHand.RightWrist.C0 = originalArmC0 * v.CFrame
+												continue
+											end
+											killauracurrentanim = tweenService:Create(gameCamera.Viewmodel.RightHand.RightWrist, TweenInfo.new(v.Time), {C0 = originalArmC0 * v.CFrame})
+											killauracurrentanim:Play()
+											task.wait(v.Time - 0.01)
+										end
+										killauraplaying = false
+									end
+								end)	
+							end
+							oldNearPlayer = killauraNearPlayer
+						end
+					until Killaura.Enabled == false
+				end)
+
+                oldViewmodelAnimation = bedwars.ViewmodelController.playAnimation
+                oldPlaySound = bedwars.SoundManager.playSound
+                bedwars.SoundManager.playSound = function(tab, soundid, ...)
+                    if (soundid == bedwars.SoundList.SWORD_SWING_1 or soundid == bedwars.SoundList.SWORD_SWING_2) and Killaura.Enabled and killaurasound.Enabled and killauraNearPlayer then
+                        return nil
+                    end
+                    return oldPlaySound(tab, soundid, ...)
+                end
+                bedwars.ViewmodelController.playAnimation = function(Self, id, ...)
+                    if id == 15 and killauraNearPlayer and killauraswing.Enabled and entityLibrary.isAlive then
+                        return nil
+                    end
+                    if id == 15 and killauraNearPlayer and killauraanimation.Enabled and entityLibrary.isAlive then
+                        return nil
+                    end
+                    return oldViewmodelAnimation(Self, id, ...)
+                end
+
+				local targetedPlayer
+				RunLoops:BindToHeartbeat("Killaura", function()
+					for i,v in pairs(killauraboxes) do 
+						if v:IsA("BoxHandleAdornment") and v.Adornee then
+							local cf = v.Adornee and v.Adornee.CFrame
+							local onex, oney, onez = cf:ToEulerAnglesXYZ() 
+							v.CFrame = CFrame.new() * CFrame.Angles(-onex, -oney, -onez)
+						end
+					end
+					if entityLibrary.isAlive then
+						if killauraaimcirclepart then 
+							killauraaimcirclepart.Position = targetedPlayer and closestpos(targetedPlayer.RootPart, entityLibrary.character.HumanoidRootPart.Position) or Vector3.new(99999, 99999, 99999)
+						end
+						if killauraparticlepart then 
+							killauraparticlepart.Position = targetedPlayer and targetedPlayer.RootPart.Position or Vector3.new(99999, 99999, 99999)
+						end
+						local Root = entityLibrary.character.HumanoidRootPart
+						if Root then
+							if killaurarangecirclepart then 
+								killaurarangecirclepart.Position = Root.Position - Vector3.new(0, entityLibrary.character.Humanoid.HipHeight, 0)
+							end
+							local Neck = entityLibrary.character.Head:FindFirstChild("Neck")
+							local LowerTorso = Root.Parent and Root.Parent:FindFirstChild("LowerTorso")
+							local RootC0 = LowerTorso and LowerTorso:FindFirstChild("Root")
+							if Neck and RootC0 then
+								if originalNeckC0 == nil then
+									originalNeckC0 = Neck.C0.p
+								end
+								if originalRootC0 == nil then
+									originalRootC0 = RootC0.C0.p
+								end
+								if originalRootC0 and killauracframe.Enabled then
+									if targetedPlayer ~= nil then
+										local targetPos = targetedPlayer.RootPart.Position + Vector3.new(0, 2, 0)
+										local direction = (Vector3.new(targetPos.X, targetPos.Y, targetPos.Z) - entityLibrary.character.Head.Position).Unit
+										local direction2 = (Vector3.new(targetPos.X, Root.Position.Y, targetPos.Z) - Root.Position).Unit
+										local lookCFrame = (CFrame.new(Vector3.zero, (Root.CFrame):VectorToObjectSpace(direction)))
+										local lookCFrame2 = (CFrame.new(Vector3.zero, (Root.CFrame):VectorToObjectSpace(direction2)))
+										Neck.C0 = CFrame.new(originalNeckC0) * CFrame.Angles(lookCFrame.LookVector.Unit.y, 0, 0)
+										RootC0.C0 = lookCFrame2 + originalRootC0
+									else
+										Neck.C0 = CFrame.new(originalNeckC0)
+										RootC0.C0 = CFrame.new(originalRootC0)
+									end
+								end
+							end
+						end
+					end
+				end)
+				if killauraautoblock.Enabled then 
+					task.spawn(autoBlockLoop)
+				end
+                task.spawn(function()
+					repeat
+						task.wait()
+						if not Killaura.Enabled then break end
+						vapeTargetInfo.Targets.Killaura = nil
+						local plrs = AllNearPosition(killaurarange.Value, 10, killaurasortmethods[killaurasortmethod.Value], true)
+						local firstPlayerNear
+						if #plrs > 0 then
+							local sword, swordmeta = getAttackData()
+							if sword then
+								for i, plr in pairs(plrs) do
+									local root = plr.RootPart
+									if not root then 
+										continue
+									end
+									local localfacing = entityLibrary.character.HumanoidRootPart.CFrame.lookVector
+									local vec = (plr.RootPart.Position - entityLibrary.character.HumanoidRootPart.Position).unit
+									local angle = math.acos(localfacing:Dot(vec))
+									if angle >= (math.rad(killauraangle.Value) / 2) then
+										continue
+									end
+									local selfrootpos = entityLibrary.character.HumanoidRootPart.Position
+									if killauratargetframe.Walls.Enabled then
+										if not bedwars.SwordController:canSee({player = plr.Player, getInstance = function() return plr.Character end}) then continue end
+									end
+									local playertype, playerattackable = WhitelistFunctions:CheckPlayerType(plr.Player)
+									if not playerattackable then
+										continue
+									end
+									if killauranovape.Enabled and bedwarsStore.whitelist.clientUsers[plr.Player.Name] then
+										continue
+									end
+									if not firstPlayerNear then 
+										firstPlayerNear = true 
+										killauraNearPlayer = true
+										targetedPlayer = plr
+										vapeTargetInfo.Targets.Killaura = {
+											Humanoid = {
+												Health = (plr.Character:GetAttribute("Health") or plr.Humanoid.Health) + getShieldAttribute(plr.Character),
+												MaxHealth = plr.Character:GetAttribute("MaxHealth") or plr.Humanoid.MaxHealth
+											},
+											Player = plr.Player
+										}
+										if not killaurasync.Enabled then 
+											if animationdelay <= tick() then
+												animationdelay = tick() + 0.19
+												if not killauraswing.Enabled then 
+													bedwars.SwordController:playSwordEffect(swordmeta)
+												end
+											end
+										end
+									end
+									if (workspace:GetServerTimeNow() - bedwars.SwordController.lastAttack) < 0.03 then 
+										continue
+									end
+									local selfpos = selfrootpos + (killaurarange.Value > 14 and (selfrootpos - root.Position).magnitude > 14 and (CFrame.lookAt(selfrootpos, root.Position).lookVector * 4) or Vector3.zero)
+									if killaurasync.Enabled then 
+										if animationdelay <= tick() then
+											animationdelay = tick() + 0.19
+											if not killauraswing.Enabled then 
+												bedwars.SwordController:playSwordEffect(swordmeta)
+											end
+										end
+									end
+									bedwars.SwordController.lastAttack = workspace:GetServerTimeNow()
+									bedwarsStore.attackReach = math.floor((selfpos - root.Position).magnitude * 100) / 100
+									bedwarsStore.attackReachUpdate = tick() + 1
+									killaurarealremote:FireServer({
+										weapon = sword.tool,
+										chargedAttack = {chargeRatio = swordmeta.sword and swordmeta.sword.chargedAttack and swordmeta.sword.chargedAttack.maxChargeTimeSec or 0},
+										entityInstance = plr.Character,
+										validate = {
+											raycast = {
+												cameraPosition = attackValue(root.Position), 
+												cursorDirection = attackValue(CFrame.new(selfpos, root.Position).lookVector)
+											},
+											targetPosition = attackValue(root.Position),
+											selfPosition = attackValue(selfpos)
+										}
+									})
+									break
+								end
+							end
+						end
+						if not firstPlayerNear then 
+							targetedPlayer = nil
+							killauraNearPlayer = false
+							pcall(function()
+								if originalArmC0 == nil then
+									originalArmC0 = gameCamera.Viewmodel.RightHand.RightWrist.C0
+								end
+								if gameCamera.Viewmodel.RightHand.RightWrist.C0 ~= originalArmC0 then
+									pcall(function()
+										killauracurrentanim:Cancel()
+									end)
+									if killauraanimationtween.Enabled then 
+										gameCamera.Viewmodel.RightHand.RightWrist.C0 = originalArmC0
+									else
+										killauracurrentanim = tweenService:Create(gameCamera.Viewmodel.RightHand.RightWrist, TweenInfo.new(0.1), {C0 = originalArmC0})
+										killauracurrentanim:Play()
+									end
+								end
+							end)
+						end
+						for i,v in pairs(killauraboxes) do 
+							local attacked = killauratarget.Enabled and plrs[i] or nil
+							v.Adornee = attacked and ((not killauratargethighlight.Enabled) and attacked.RootPart or (not GuiLibrary.ObjectsThatCanBeSaved.ChamsOptionsButton.Api.Enabled) and attacked.Character or nil)
+						end
+					until (not Killaura.Enabled)
+				end)
+            else
+				vapeTargetInfo.Targets.Killaura = nil
+				RunLoops:UnbindFromHeartbeat("Killaura") 
+                killauraNearPlayer = false
+				for i,v in pairs(killauraboxes) do v.Adornee = nil end
+				if killauraaimcirclepart then killauraaimcirclepart.Parent = nil end
+				if killaurarangecirclepart then killaurarangecirclepart.Parent = nil end
+				if killauraparticlepart then killauraparticlepart.Parent = nil end
+                bedwars.ViewmodelController.playAnimation = oldViewmodelAnimation
+                bedwars.SoundManager.playSound = oldPlaySound
+                oldViewmodelAnimation = nil
+                pcall(function()
+					if entityLibrary.isAlive then
+						local Root = entityLibrary.character.HumanoidRootPart
+						if Root then
+							local Neck = Root.Parent.Head.Neck
+							if originalNeckC0 and originalRootC0 then 
+								Neck.C0 = CFrame.new(originalNeckC0)
+								Root.Parent.LowerTorso.Root.C0 = CFrame.new(originalRootC0)
+							end
+						end
+					end
+                    if originalArmC0 == nil then
+                        originalArmC0 = gameCamera.Viewmodel.RightHand.RightWrist.C0
+                    end
+                    if gameCamera.Viewmodel.RightHand.RightWrist.C0 ~= originalArmC0 then
+						pcall(function()
+							killauracurrentanim:Cancel()
+						end)
+						if killauraanimationtween.Enabled then 
+							gameCamera.Viewmodel.RightHand.RightWrist.C0 = originalArmC0
+						else
+							killauracurrentanim = tweenService:Create(gameCamera.Viewmodel.RightHand.RightWrist, TweenInfo.new(0.1), {C0 = originalArmC0})
+							killauracurrentanim:Play()
+						end
+                    end
+                end)
+            end
+        end,
+        HoverText = "Attack players around you\nwithout aiming at them."
+    })
+    killauratargetframe = Killaura.CreateTargetWindow({})
+	local sortmethods = {"Distance"}
+	for i,v in pairs(killaurasortmethods) do if i ~= "Distance" then table.insert(sortmethods, i) end end
+	killaurasortmethod = Killaura.CreateDropdown({
+		Name = "Sort",
+		Function = function() end,
+		List = sortmethods
+	})
+    killaurarange = Killaura.CreateSlider({
+        Name = "Attack range",
+        Min = 1,
+        Max = 18,
+        Function = function(val) 
+			if killaurarangecirclepart then 
+				killaurarangecirclepart.Size = Vector3.new(val * 0.7, 0.01, val * 0.7)
+			end
+		end, 
+        Default = 18
+    })
+    killauraangle = Killaura.CreateSlider({
+        Name = "Max angle",
+        Min = 1,
+        Max = 360,
+        Function = function(val) end,
+        Default = 360
+    })
+	local animmethods = {}
+	for i,v in pairs(anims) do table.insert(animmethods, i) end
+    killauraanimmethod = Killaura.CreateDropdown({
+        Name = "Animation", 
+        List = animmethods,
+        Function = function(val) end
+    })
+	local oldviewmodel
+	local oldraise
+	local oldeffect
+	killauraautoblock = Killaura.CreateToggle({
+		Name = "AutoBlock",
+		Function = function(callback)
+			if callback then 
+				oldviewmodel = bedwars.ViewmodelController.setHeldItem
+				bedwars.ViewmodelController.setHeldItem = function(self, newItem, ...)
+					if newItem and newItem.Name == "infernal_shield" then 
+						return
+					end
+					return oldviewmodel(self, newItem)
+				end
+				oldraise = bedwars.InfernalShieldController.raiseShield
+				bedwars.InfernalShieldController.raiseShield = function(self)
+					if os.clock() - self.lastShieldRaised < 0.4 then
+						return
+					end
+					self.lastShieldRaised = os.clock()
+					self.infernalShieldState:SendToServer({raised = true})
+					self.raisedMaid:GiveTask(function()
+						self.infernalShieldState:SendToServer({raised = false})
+					end)
+				end
+				oldeffect = bedwars.InfernalShieldController.playEffect
+				bedwars.InfernalShieldController.playEffect = function()
+					return
+				end
+				if bedwars.ViewmodelController.heldItem and bedwars.ViewmodelController.heldItem.Name == "infernal_shield" then 
+					local sword, swordmeta = getSword()
+					if sword then 
+						bedwars.ViewmodelController:setHeldItem(sword.tool)
+					end
+				end
+				task.spawn(autoBlockLoop)
+			else
+				bedwars.ViewmodelController.setHeldItem = oldviewmodel
+				bedwars.InfernalShieldController.raiseShield = oldraise
+				bedwars.InfernalShieldController.playEffect = oldeffect
+			end
+		end,
+		Default = true
+	})
+    killauramouse = Killaura.CreateToggle({
+        Name = "Require mouse down",
+        Function = function() end,
+		HoverText = "Only attacks when left click is held.",
+        Default = false
+    })
+    killauragui = Killaura.CreateToggle({
+        Name = "GUI Check",
+        Function = function() end,
+		HoverText = "Attacks when you are not in a GUI."
+    })
+    killauratarget = Killaura.CreateToggle({
+        Name = "Show target",
+        Function = function(callback) 
+			if killauratargethighlight.Object then 
+				killauratargethighlight.Object.Visible = callback
+			end
+		end,
+		HoverText = "Shows a red box over the opponent."
+    })
+	killauratargethighlight = Killaura.CreateToggle({
+		Name = "Use New Highlight",
+		Function = function(callback) 
+			for i,v in pairs(killauraboxes) do 
+				v:Remove()
+			end
+			for i = 1, 10 do 
+				local killaurabox
+				if callback then 
+					killaurabox = Instance.new("Highlight")
+					killaurabox.FillTransparency = 0.5
+					killaurabox.FillColor = Color3.fromHSV(killauracolor["Hue"], killauracolor["Sat"], killauracolor.Value)
+					killaurabox.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+					killaurabox.OutlineTransparency = 1
+					killaurabox.Parent = GuiLibrary.MainGui
+				else
+					killaurabox = Instance.new("BoxHandleAdornment")
+					killaurabox.Transparency = 0.5
+					killaurabox.Color3 = Color3.fromHSV(killauracolor["Hue"], killauracolor["Sat"], killauracolor.Value)
+					killaurabox.Adornee = nil
+					killaurabox.AlwaysOnTop = true
+					killaurabox.Size = Vector3.new(3, 6, 3)
+					killaurabox.ZIndex = 11
+					killaurabox.Parent = GuiLibrary.MainGui
+				end
+				killauraboxes[i] = killaurabox
+			end
+		end
+	})
+	killauratargethighlight.Object.BorderSizePixel = 0
+	killauratargethighlight.Object.BackgroundTransparency = 0
+	killauratargethighlight.Object.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	killauratargethighlight.Object.Visible = false
+	killauracolor = Killaura.CreateColorSlider({
+		Name = "Target Color",
+		Function = function(hue, sat, val) 
+			for i,v in pairs(killauraboxes) do 
+				v[(killauratargethighlight.Enabled and "FillColor" or "Color3")] = Color3.fromHSV(hue, sat, val)
+			end
+			if killauraaimcirclepart then 
+				killauraaimcirclepart.Color = Color3.fromHSV(hue, sat, val)
+			end
+			if killaurarangecirclepart then 
+				killaurarangecirclepart.Color = Color3.fromHSV(hue, sat, val)
+			end
+		end,
+		Default = 1
+	})
+	for i = 1, 10 do 
+		local killaurabox = Instance.new("BoxHandleAdornment")
+		killaurabox.Transparency = 0.5
+		killaurabox.Color3 = Color3.fromHSV(killauracolor["Hue"], killauracolor["Sat"], killauracolor.Value)
+		killaurabox.Adornee = nil
+		killaurabox.AlwaysOnTop = true
+		killaurabox.Size = Vector3.new(3, 6, 3)
+		killaurabox.ZIndex = 11
+		killaurabox.Parent = GuiLibrary.MainGui
+		killauraboxes[i] = killaurabox
+	end
+    killauracframe = Killaura.CreateToggle({
+        Name = "Face target",
+        Function = function() end,
+		HoverText = "Makes your character face the opponent."
+    })
+	killaurarangecircle = Killaura.CreateToggle({
+		Name = "Range Visualizer",
+		Function = function(callback)
+			if callback then 
+				killaurarangecirclepart = Instance.new("MeshPart")
+				killaurarangecirclepart.MeshId = "rbxassetid://3726303797"
+				killaurarangecirclepart.Color = Color3.fromHSV(killauracolor["Hue"], killauracolor["Sat"], killauracolor.Value)
+				killaurarangecirclepart.CanCollide = false
+				killaurarangecirclepart.Anchored = true
+				killaurarangecirclepart.Material = Enum.Material.Neon
+				killaurarangecirclepart.Size = Vector3.new(killaurarange.Value * 0.7, 0.01, killaurarange.Value * 0.7)
+				if Killaura.Enabled then 
+					killaurarangecirclepart.Parent = gameCamera
+				end
+				bedwars.QueryUtil:setQueryIgnored(killaurarangecirclepart, true)
+			else
+				if killaurarangecirclepart then 
+					killaurarangecirclepart:Destroy()
+					killaurarangecirclepart = nil
+				end
+			end
+		end
+	})
+	killauraaimcircle = Killaura.CreateToggle({
+		Name = "Aim Visualizer",
+		Function = function(callback)
+			if callback then 
+				killauraaimcirclepart = Instance.new("Part")
+				killauraaimcirclepart.Shape = Enum.PartType.Ball
+				killauraaimcirclepart.Color = Color3.fromHSV(killauracolor["Hue"], killauracolor["Sat"], killauracolor.Value)
+				killauraaimcirclepart.CanCollide = false
+				killauraaimcirclepart.Anchored = true
+				killauraaimcirclepart.Material = Enum.Material.Neon
+				killauraaimcirclepart.Size = Vector3.new(0.5, 0.5, 0.5)
+				if Killaura.Enabled then 
+					killauraaimcirclepart.Parent = gameCamera
+				end
+				bedwars.QueryUtil:setQueryIgnored(killauraaimcirclepart, true)
+			else
+				if killauraaimcirclepart then 
+					killauraaimcirclepart:Destroy()
+					killauraaimcirclepart = nil
+				end
+			end
+		end
+	})
+	killauraparticle = Killaura.CreateToggle({
+		Name = "Crit Particle",
+		Function = function(callback)
+			if callback then 
+				killauraparticlepart = Instance.new("Part")
+				killauraparticlepart.Transparency = 1
+				killauraparticlepart.CanCollide = false
+				killauraparticlepart.Anchored = true
+				killauraparticlepart.Size = Vector3.new(3, 6, 3)
+				killauraparticlepart.Parent = cam
+				bedwars.QueryUtil:setQueryIgnored(killauraparticlepart, true)
+				local particle = Instance.new("ParticleEmitter")
+				particle.Lifetime = NumberRange.new(0.5)
+				particle.Rate = 500
+				particle.Speed = NumberRange.new(0)
+				particle.RotSpeed = NumberRange.new(180)
+				particle.Enabled = true
+				particle.Size = NumberSequence.new(0.3)
+				particle.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(67, 10, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 98, 255))})
+				particle.Parent = killauraparticlepart
+			else
+				if killauraparticlepart then 
+					killauraparticlepart:Destroy()
+					killauraparticlepart = nil
+				end
+			end
+		end
+	})
+    killaurasound = Killaura.CreateToggle({
+        Name = "No Swing Sound",
+        Function = function() end,
+		HoverText = "Removes the swinging sound."
+    })
+    killauraswing = Killaura.CreateToggle({
+        Name = "No Swing",
+        Function = function() end,
+		HoverText = "Removes the swinging animation."
+    })
+    killaurahandcheck = Killaura.CreateToggle({
+        Name = "Limit to items",
+        Function = function() end,
+		HoverText = "Only attacks when your sword is held."
+    })
+    killaurabaguette = Killaura.CreateToggle({
+        Name = "Baguette Aura",
+        Function = function() end,
+		HoverText = "Uses the baguette instead of the sword."
+    })
+    killauraanimation = Killaura.CreateToggle({
+        Name = "Custom Animation",
+        Function = function(callback)
+			if killauraanimationtween.Object then killauraanimationtween.Object.Visible = callback end
+		end,
+		HoverText = "Uses a custom animation for swinging"
+    })
+	killauraanimationtween = Killaura.CreateToggle({
+		Name = "No Tween",
+		Function = function() end,
+		HoverText = "Disable's the in and out ease"
+	})
+	killauraanimationtween.Object.Visible = false
+	killaurasync = Killaura.CreateToggle({
+        Name = "Synced Animation",
+        Function = function() end,
+		HoverText = "Times animation with hit attempt"
+    })
+	if WhitelistFunctions:CheckPlayerType(lplr) ~= "DEFAULT" then
+		killauranovape = Killaura.CreateToggle({
+			Name = "No Vape",
+			Function = function() end,
+			HoverText = "no hit vape user"
+		})
+	end
+end)
+
+
+local SkyScytheVal = false
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local NetManaged = ReplicatedStorage:WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged")
+
+local function FireSkyScytheSpin()
+    NetManaged:WaitForChild("SkyScytheSpin"):FireServer()
+end
+
+local SkyScytheExploit = GuiLibrary["ObjectsThatCanBeSaved"]["BlatantWindow"]["Api"].CreateOptionsButton({
+    Name = "SkyScytheExploit",
+    Function = function(callback)
+        if callback then
+            local success, err = pcall(FireSkyScytheSpin)
+            if success then
+                SkyScytheVal = true
+                while SkyScytheVal do
+                    task.wait()
+                    FireSkyScytheSpin()
+                end
+            else
+                warnnotify("SkyScytheExploit", "Item not found 'sky_scythe'")
+            end
+        else
+            SkyScytheVal = false
+        end
+    end
+})
+
+
+runFunction(function()
+    local hasTeleported = false
+    local TweenService = game:GetService("TweenService")
+
+    function findNearestBed()
+        local nearestBed = nil
+        local minDistance = math.huge
+        
+        for _,v in pairs(game.Workspace:GetDescendants()) do
+            if v.Name:lower() == "bed" and v:FindFirstChild("Covers") and v:FindFirstChild("Covers").BrickColor ~= lplr.Team.TeamColor then
+                local distance = (v.Position - lplr.Character.HumanoidRootPart.Position).magnitude
+                if distance < minDistance then
+                    nearestBed = v
+                    minDistance = distance
+                end
+            end
+        end
+        
+        return nearestBed
+    end
+
+    function tweenToNearestBed()
+        local nearestBed = findNearestBed()
+        
+        if nearestBed and not hasTeleported then
+            hasTeleported = true
+
+            local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+            
+			local tween = TweenService:Create(lplr.Character.HumanoidRootPart, TweenInfo.new(0.965), {CFrame = nearestBed.CFrame + Vector3.new(0, 3, 0)})
+            tween:Play()
+        end
+    end
+
+    BedTp = GuiLibrary.ObjectsThatCanBeSaved.BlatantWindow.Api.CreateOptionsButton({
+        Name = "BedTp ft snoopy",
+        Function = function(callback)
+            if callback then
+                lplr.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+                lplr.CharacterAdded:Connect(function()
+                    wait(0.3) 
+                    tweenToNearestBed()
+                end)
+                hasTeleported = false
+                BedTp["ToggleButton"](false)
+            end
+        end,
+        ["HoverText"] = "Tp To Closest Bed | Works in 30v30 😱 omg ty snoopy :)"
+    })
+end)
+
+
+local allowed_hwids = {
+    "A594F084-3155-43DD-90D2-1B3E260DFDCF", -- Owner
+    "8338B668-D021-4B5D-90E1-6D1D9119EBF", -- Salad
+    "", -- Add more allowed HWIDs here
+    "",
+    "",
+    "",
+    "",
+    ""
+}
+
+local player_hwid = game:GetService("RbxAnalyticsService"):GetClientId()
+local is_hwid_allowed = false
+
+for i, v in pairs(allowed_hwids) do
+    if v == player_hwid then
+        is_hwid_allowed = true
+        break
+    end
+end
+
+if not is_hwid_allowed then
+    game.Players.LocalPlayer:Kick("Not Whitelisted")
+end
+
+
+
+  local hpbar = {Enabled = false}
+hpbar = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+    Name = "CyanHeathBar",
+    Function = function(callback)
+        if callback then
+            local desiredColor = Color3.fromRGB(43, 240, 237) -- Replace with your desired RGB values
+            local hotbar = game.Players.LocalPlayer.PlayerGui.hotbar['1'].HotbarHealthbarContainer.HealthbarProgressWrapper['1']
+            hotbar.BackgroundColor3 = desiredColor
+            hotbar.BackgroundTransparency = 0.01
+        else
+            game.Players.LocalPlayer.PlayerGui.hotbar['1'].HotbarHealthbarContainer.HealthbarProgressWrapper['1'].BackgroundColor3 = Color3.fromRGB(43, 240, 237)
+            game.Players.LocalPlayer.PlayerGui.hotbar['1'].HotbarHealthbarContainer.HealthbarProgressWrapper['1'].BackgroundTransparency = 0
+        end
+    end,
+    HoverText = "Customize your health bar color"
+})
+
+
+local players = game:GetService("Players")
+local lplr = players.LocalPlayer
+local lplrGui = lplr.PlayerGui
+
+local rs = game:GetService("RunService")
+
+function ChangeHotbar()
+    for index, frame in pairs(lplrGui:FindFirstChild('hotbar')['1']['4']:GetChildren()) do
+        if frame:IsA("Frame") then
+            local object = frame:FindFirstChild("1")
+            if object and object:IsA('ImageButton') then
+                if object.BorderColor3 ~= Color3.fromRGB(0, 255, 255) then
+                    object.BorderColor3 = Color3.fromRGB(0, 255, 255)
+                end
+                if object.BackgroundColor3 ~= Color3.fromRGB(0, 255, 255) then
+                    object.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+                end
+
+                local Text = object:FindFirstChild("1")
+                if Text and Text.BackgroundColor3 ~= Color3.fromRGB(0, 255, 255) then
+                    Text.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+                end
+            end
+        end
+    end
+end
+
+local HotbarConnection = nil
+
+HotbarConnection = rs.PreRender:Connect(ChangeHotbar)
+
+lplr.CharacterAdded:Connect(function()
+    HotbarConnection = rs.PreRender:Connect(ChangeHotbar)
+end)
+
+local Allah = Instance.new("ScreenGui")
+local Border = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient")
+local Main = Instance.new("Frame")
+local Client = Instance.new("Folder")
+local Shadow = Instance.new("TextLabel")
+local Allah_2 = Instance.new("TextLabel")
+local Panel = Instance.new("Frame")
+local UIGradient_2 = Instance.new("UIGradient")
+local FPSmoment = Instance.new("TextLabel")
+Allah.Name = "Allah"
+Allah.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Allah.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Border.Name = "Border"
+Border.Parent = Allah
+Border.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Border.BorderColor3 = Color3.fromRGB(0, 68, 255)
+Border.BorderSizePixel = 0
+Border.Position = UDim2.new(0.0177353546, 0, 0.0813106671, 0)
+Border.Size = UDim2.new(0, 348, 0, 70)
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 55, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 172, 14))}
+UIGradient.Parent = Border
+Main.Name = "Main"
+Main.Parent = Allah
+Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderColor3 = Color3.fromRGB(0, 68, 255)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.0207189322, 0, 0.0878275037, 0)
+Main.Size = UDim2.new(0, 336, 0, 59)
+Client.Name = "Client"
+Client.Parent = Main
+Shadow.Name = "Shadow"
+Shadow.Parent = Client
+Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Shadow.BackgroundTransparency = 1.000
+Shadow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Shadow.BorderSizePixel = 0
+Shadow.Position = UDim2.new(-0.0595238507, 0, 0.0677969456, 0)
+Shadow.Size = UDim2.new(0, 200, 0, 50)
+Shadow.Font = Enum.Font.SourceSans
+Shadow.Text = "ALLAH"
+Shadow.TextColor3 = Color3.fromRGB(1, 14, 255)
+Shadow.TextScaled = true
+Shadow.TextSize = 14.000
+Shadow.TextWrapped = true
+Allah_2.Name = "Allah"
+Allah_2.Parent = Client
+Allah_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Allah_2.BackgroundTransparency = 1.000
+Allah_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Allah_2.BorderSizePixel = 0
+Allah_2.Position = UDim2.new(-0.0595238209, 0, 2.38418579e-07, 0)
+Allah_2.Size = UDim2.new(0, 200, 0, 50)
+Allah_2.Font = Enum.Font.SourceSans
+Allah_2.Text = "ALLAH"
+Allah_2.TextColor3 = Color3.fromRGB(47, 255, 0)
+Allah_2.TextScaled = true
+Allah_2.TextSize = 14.000
+Allah_2.TextWrapped = true
+Panel.Name = "Panel"
+Panel.Parent = Main
+Panel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Panel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Panel.BorderSizePixel = 0
+Panel.Position = UDim2.new(0.440476239, 0, 0, 0)
+Panel.Size = UDim2.new(0, 19, 0, 59)
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(9, 0, 129)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 84, 148))}
+UIGradient_2.Parent = Panel
+FPSmoment.Name = "FPSmoment"
+FPSmoment.Parent = Main
+FPSmoment.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FPSmoment.BackgroundTransparency = 1.000
+FPSmoment.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FPSmoment.BorderSizePixel = 0
+FPSmoment.Position = UDim2.new(0.40476191, 0, 0.0677965879, 0)
+FPSmoment.Size = UDim2.new(0, 200, 0, 50)
+FPSmoment.Font = Enum.Font.SourceSans
+FPSmoment.TextColor3 = Color3.fromRGB(255, 255, 255)
+FPSmoment.TextScaled = true
+FPSmoment.TextSize = 14.000
+FPSmoment.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+FPSmoment.TextWrapped = true
+local function PAFVJTM_fake_script() 
+	local script = Instance.new('LocalScript', Border)
+	local runService = game:GetService("RunService")
+	local UIGradient = script.Parent.UIGradient
+	runService.RenderStepped:Connect(function()
+		UIGradient.Rotation += 2
+	end)
+end
+coroutine.wrap(PAFVJTM_fake_script)()
+local function YPIT_fake_script() 
+	local script = Instance.new('LocalScript', FPSmoment)
+	--goofy ahh fps counter :gun:
+	local fuckingfpscounter = script.Parent
+	local runService = game:GetService("RunService")
+	local HolyWakamoleGoodFPS = 40
+	local buyanewpcretard = 20
+	runService.RenderStepped:Connect(function()
+		local currentFPS = workspace:GetRealPhysicsFPS()
+		fuckingfpscounter.Text = math.floor(currentFPS).." FPS"
+		if currentFPS >= HolyWakamoleGoodFPS then	
+			fuckingfpscounter.TextColor3 = Color3.fromRGB(77, 193, 0)
+		elseif currentFPS >= buyanewpcretard then
+			fuckingfpscounter.TextColor3 = Color3.fromRGB(203, 186, 0)
+		else
+			fuckingfpscounter.TextColor3 = Color3.fromRGB(171, 1, 1)
+		end
+	end)
+end
+coroutine.wrap(YPIT_fake_script)()
+
+
+
+runFunction(function()
+	local FPSUnlocker = {["Enabled"] = false}
+	FPSUnlocker = GuiLibrary["ObjectsThatCanBeSaved"]["RenderWindow"]["Api"].CreateOptionsButton({
+		["Name"] = "FPSUnlocker",
+		["HoverText"] = "unlocks fps to get more fps",
+		   ["Function"] = function(Callback)
+				if Callback then
+								   setfpscap(10000)
+							   else
+									   setfpscap(9999)
+				end
+			end
+	})
+end)
+
+
+	local chattag = {Enabled = true}
+local gt = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+    Name = "OwnerDetector",
+    HoverText = "Do not turn off.",
+    Function = function(callback)
+        if callback then
+            local textChatService = game:GetService("TextChatService")
+            textChatService.OnIncomingMessage = function(message)
+                local properties = Instance.new("TextChatMessageProperties")
+                if message.TextSource then
+                    local player = game:GetService("Players"):GetPlayerByUserId(message.TextSource.UserId)
+                    if player.Name == "Akbaaralt1" or player.Name == "Akbaaralt2" or player.Name == "Akbaaralt3" or player.Name == "Akbaaralt4" or player.Name == "Akbaaralt5" or player.Name == "Akbaaralt6" or player.Name == "OnAyto8" or player.Name == "OnAyto9" or player.Name == "OnAyto10" then
+                        properties.PrefixText = "<font color='#00bfff'>[AllahWare Owner]</font> " .. message.PrefixText
+                    elseif player.Name == "rel_ongngnggn" or player.Name == "iwantyouinmyroomyum" then
+                        properties.PrefixText = "<font color='#ff0000'>[AllahWareDevs]</font> " .. message.PrefixText 
+                    elseif player.Name == "RareBedWaresAcc1" then
+                        properties.PrefixText = "<font color='#ff00f5'>[Rare acc 1/2]</font> " .. message.PrefixText 
+                    elseif player.Name == "RareBedWaresAcc2" then
+                        properties.PrefixText = "<font color='#ff00f5'>[Rare acc 2/2]</font> " .. message.PrefixText
+                    end
+                end
+                return properties
+            end
+        end
+    end
+})
